@@ -387,6 +387,21 @@ article p {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 8vw;
 }
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 14px;
+}
+
+.contact-detail {
+  margin-top: 12px;
+}
+
+.contact-detail a {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
 
 form {
   display: grid;

@@ -434,6 +434,62 @@ form small {
   color: var(--muted);
 }
 
+.enquiry-consent {
+  margin: 4px 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.enquiry-consent legend {
+  padding: 0 8px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.enquiry-consent > p:first-of-type {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.consent-option {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin: 16px 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.consent-option input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  margin: 2px 0 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.consent-option a,
+.form-privacy-note a {
+  color: var(--ink);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.consent-note {
+  margin: 18px 0 0;
+  padding: 14px;
+  border-left: 4px solid var(--ink);
+  background: rgba(20, 32, 29, 0.06);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 form button {
   justify-self: start;
 }
@@ -443,6 +499,14 @@ form button {
   padding: 14px;
   border-left: 4px solid var(--ink);
   background: rgba(20, 32, 29, 0.08);
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 footer {

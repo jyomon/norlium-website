@@ -446,6 +446,37 @@
           autocomplete="email"
           required
         >
+        <label for="company">
+          Company <span aria-hidden="true">(optional)</span>
+        </label>
+
+        <input
+          id="company"
+          name="company"
+          type="text"
+          autocomplete="organization"
+        >
+
+        <label for="telephone">
+          Telephone <span aria-hidden="true">(optional)</span>
+        </label>
+
+        <input
+          id="telephone"
+          name="telephone"
+          type="tel"
+          autocomplete="tel"
+        >
+
+        <label for="preferred-contact">
+          Preferred contact method
+        </label>
+
+        <select id="preferred-contact" name="preferred-contact">
+          <option value="Email">Email</option>
+          <option value="Telephone">Telephone</option>
+          <option value="WhatsApp">WhatsApp</option>
+        </select>
 
         <label for="service-type">
           What type of support do you need?
@@ -460,6 +491,19 @@
           <option value="other">Other</option>
         </select>
 
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="website-address">
+            Leave this field empty
+          </label>
+          <input
+            id="website-address"
+            name="website-address"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+          >
+        </div>
+
         <label for="message">
           How can we help?
         </label>
@@ -468,28 +512,82 @@
           id="message"
           name="message"
           rows="5"
+          minlength="10"
+          maxlength="2000"
+          aria-describedby="form-security-note"
           required
         ></textarea>
 
         <small id="form-security-note">
-          Please do not include passwords, bank details or sensitive personal
-          information.
+          For your security, please do not include passwords, security codes,
+          payment card or bank details, or other sensitive personal information.
         </small>
 
         <p class="form-privacy-note">
-          If you contact Norlium using the details you provide here, NORLIUM LTD
-          will use that information to respond to your enquiry. See our
-          <a href="/privacy/">Privacy Policy</a>.
+          NORLIUM LTD will use the information you provide to review and respond
+          to your enquiry. For more information about how we handle personal
+          data, see our
+          <a href="/privacy/" target="_blank" rel="noopener noreferrer">
+            Privacy Policy
+          </a>.
         </p>
+
+        <fieldset class="enquiry-consent">
+          <legend>Before you submit</legend>
+
+          <p>
+            Please review and confirm the following before sending your
+            enquiry.
+          </p>
+
+          <label class="consent-option">
+            <input
+              type="checkbox"
+              name="information-confirmed"
+              required
+            >
+            <span>
+              I confirm that the information I have provided is accurate to
+              the best of my knowledge.
+            </span>
+          </label>
+
+          <label class="consent-option">
+            <input
+              type="checkbox"
+              name="privacy-confirmed"
+              required
+            >
+            <span>
+              I have read the
+              <a href="/privacy/" target="_blank" rel="noopener noreferrer">
+                Privacy Policy
+              </a>
+              and understand that NORLIUM LTD will use the information I
+              provide to respond to my enquiry.
+            </span>
+          </label>
+
+          <p class="consent-note">
+            <strong>Important:</strong>
+            Submitting this enquiry does not authorise Norlium to access your
+            devices, accounts, networks or data. If access is required,
+            separate authorisation will be requested before work begins.
+          </p>
+        </fieldset>
 
         <button class="primary" type="submit">
-          Prepare Enquiry
+          Submit Enquiry
         </button>
 
-        <p id="form-message" class="form-message" hidden>
-          Online enquiry submission is not yet enabled. Please email
-          contact@norlium.co.uk instead.
-        </p>
+        <p
+          id="form-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+          tabindex="-1"
+          hidden
+        ></p>
       </form>
 
     </section>
@@ -552,11 +650,99 @@
       });
     });
 
-    enquiryForm.addEventListener('submit', event => {
+    enquiryForm.addEventListener('submit', async event => {
       event.preventDefault();
+
+      if (!enquiryForm.reportValidity()) {
+        return;
+      }
+
+      const submitButton = enquiryForm.querySelector(
+        'button[type="submit"]'
+      );
+
+      const name = enquiryForm.querySelector('#name').value.trim();
+      const email = enquiryForm
+        .querySelector('#contact-method')
+        .value.trim();
+      const company = enquiryForm.querySelector('#company').value.trim();
+      const telephone = enquiryForm
+        .querySelector('#telephone')
+        .value.trim();
+      const preferredContact = enquiryForm.querySelector(
+        '#preferred-contact'
+      ).value;
+      const service = enquiryForm.querySelector('#service-type').value;
+      const message = enquiryForm.querySelector('#message').value.trim();
+
+      const websiteAddress = enquiryForm
+        .querySelector('#website-address')
+        .value.trim();
+
+      const informationConfirmed = enquiryForm.querySelector(
+        '[name="information-confirmed"]'
+      ).checked;
+
+      const privacyConfirmed = enquiryForm.querySelector(
+        '[name="privacy-confirmed"]'
+      ).checked;
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+
       formMessage.hidden = false;
-      formMessage.focus?.();
+      formMessage.textContent = 'Sending your enquiry…';
+
+      try {
+        const response = await fetch('/api/enquiry', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            company,
+            telephone,
+            preferredContact,
+            service,
+            message,
+            websiteAddress,
+            informationConfirmed,
+            privacyConfirmed
+          })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(
+            result.message || 'Unable to send your enquiry.'
+          );
+        }
+
+        enquiryForm.reset();
+
+        formMessage.textContent =
+          'Thank you. Your enquiry has been received by Norlium. ' +
+          'We will respond using your preferred contact method.';
+
+        formMessage.focus();
+      } catch (error) {
+        console.error('Enquiry submission failed:', error);
+
+        formMessage.textContent =
+          error.message ||
+          'We could not send your enquiry. Please try again later.';
+
+        formMessage.focus();
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit Enquiry';
+      }
     });
+
   </script>
 </body>
 </html>

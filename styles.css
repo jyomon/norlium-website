@@ -529,6 +529,136 @@ footer p:last-child {
   text-align: right;
 }
 
+
+
+
+/* Pricing options */
+.pricing-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 38px 0;
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+}
+
+.pricing-options > div {
+  padding: 24px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.pricing-options b {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.pricing-options p {
+  margin: 0;
+  font-size: 17px !important;
+}
+
+/* Customer support process */
+.support-process {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: support-step;
+}
+
+.support-process li {
+  counter-increment: support-step;
+  position: relative;
+  padding: 22px 0 22px 58px;
+  border-top: 1px solid var(--line);
+  color: #4b5652;
+}
+
+.support-process li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.support-process li::before {
+  content: counter(support-step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 22px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+}
+
+.support-process strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--ink);
+  font-size: 18px;
+}
+
+/* Desktop layout refinement */
+@media (min-width: 1051px) {
+  main section {
+    padding-top: 78px;
+    padding-bottom: 78px;
+  }
+
+  .hero {
+    min-height: 590px;
+    grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
+    gap: clamp(55px, 6vw, 100px);
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 6vw, 88px);
+    max-width: 880px;
+  }
+
+  h2 {
+    font-size: clamp(38px, 4vw, 58px);
+    margin-bottom: 36px;
+  }
+
+  .grid article {
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+  }
+
+  .grid article h3 {
+    margin-top: 32px;
+  }
+
+  .grid article p {
+    margin-bottom: 22px;
+  }
+
+  .grid article .secondary {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  #support-options .grid article {
+    min-height: 300px;
+  }
+
+  #support-options .grid article h3 {
+    font-size: 27px;
+  }
+
+  #services .grid article {
+    min-height: 230px;
+  }
+
+  .split {
+    gap: clamp(60px, 7vw, 120px);
+  }
+
+  .split > div:last-child {
+    max-width: 720px;
+  }
+}
+
 @media (max-width: 1050px) {
   #main-navigation {
     gap: 16px;
@@ -549,6 +679,10 @@ footer p:last-child {
 }
 
 @media (max-width: 800px) {
+  .pricing-options {
+    grid-template-columns: 1fr;
+  }
+
   html {
     scroll-padding-top: 78px;
   }

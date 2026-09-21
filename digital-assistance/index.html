@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Digital Assistance & Online Support | Norlium</title>
+  <title>Digital Assistance & Online Support | Norlium Technology</title>
 
   <meta
     name="description"
-    content="Norlium provides practical digital assistance with online services, forms, document uploads, GOV.UK websites, council services, education systems and general digital literacy."
+    content="Norlium Technology provides practical digital assistance with online services, forms, document uploads, GOV.UK websites, council services, education systems and general digital literacy."
   >
 
   <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
   <link rel="canonical" href="https://www.norlium.co.uk/digital-assistance/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Digital Assistance & Online Support | Norlium">
+  <meta property="og:title" content="Digital Assistance & Online Support | Norlium Technology">
   <meta
     property="og:description"
     content="Patient, practical help using online services, forms, documents and everyday digital systems."
@@ -68,7 +68,7 @@
         <h1>Practical help using online services.</h1>
 
         <p class="lead">
-          Norlium provides patient, straightforward assistance for people who
+          Norlium Technology provides patient, straightforward assistance for people who
           need help using websites, online forms, digital accounts, document
           uploads and everyday online services.
         </p>
@@ -98,7 +98,7 @@
 
       <p class="section-intro">
         You do not need to be confident with computers to use online services.
-        Norlium can guide you through the process at a pace that makes sense.
+        Norlium Technology can guide you through the process at a pace that makes sense.
       </p>
 
       <div class="grid">
@@ -195,7 +195,7 @@
         <h2>Assistance without taking over your decisions.</h2>
 
         <p>
-          Norlium can explain the digital process, help you navigate the
+          Norlium Technology can explain the digital process, help you navigate the
           website and assist with entering information that you provide.
         </p>
 
@@ -219,7 +219,7 @@
 
       <div>
         <p>
-          Norlium provides practical technology and digital-literacy
+          Norlium Technology provides practical technology and digital-literacy
           assistance.
         </p>
 
@@ -271,7 +271,7 @@
 
       <div>
         <p>
-          Norlium plans to provide selected digital-assistance services for
+          Norlium Technology plans to provide selected digital-assistance services for
           Arabic-speaking customers, including people who may find UK online
           systems unfamiliar or difficult to navigate.
         </p>
@@ -376,27 +376,6 @@
     <p>© 2026 NORLIUM LTD. Trading as Norlium Technology.</p>
   </footer>
 
-  <script>
-    const menuButton = document.querySelector('.menu');
-    const navigation = document.querySelector('#main-navigation');
-
-    menuButton.addEventListener('click', () => {
-      const isOpen = navigation.classList.toggle('open');
-
-      menuButton.setAttribute('aria-expanded', String(isOpen));
-      menuButton.setAttribute(
-        'aria-label',
-        isOpen ? 'Close navigation menu' : 'Open navigation menu'
-      );
-    });
-
-    document.querySelectorAll('#main-navigation a').forEach(link => {
-      link.addEventListener('click', () => {
-        navigation.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', 'Open navigation menu');
-      });
-    });
-  </script>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

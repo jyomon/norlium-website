@@ -11,7 +11,7 @@
 
     <meta
       name="description"
-      content="Practical IT support for homes and small businesses. Help with computers, Wi-Fi, business IT, websites, digital services, Linux and everyday technology problems."
+      content="Practical IT support for homes and small businesses. Help with computers, Wi-Fi, business IT, websites, digital services, older computer reuse and everyday technology problems."
     >
 
     <meta
@@ -85,12 +85,13 @@
     <nav id="main-navigation" aria-label="Primary navigation">
       <a href="/services/">Services</a>
       <a href="/business-it/">Business IT</a>
-      <a href="#linux">Reuse & Linux</a>
+      <a href="#linux">Older Computer Reuse</a>
       <a href="/digital-assistance/">Digital Assistance</a>
       <a href="/about/">About</a>
       <a href="#contact">Contact</a>
       <a class="nav-cta" href="#contact">Get Support</a>
     </nav>
+
   </header>
 
   <main id="main-content">
@@ -251,7 +252,7 @@
         <article>
           <b aria-hidden="true">06</b>
 
-          <h3>Linux & Open Source</h3>
+          <h3>Older Computer Reuse</h3>
 
           <p>
             Assess older hardware, extend its useful life where practical,
@@ -546,11 +547,9 @@
           autocomplete="tel"
         >
 
-        <label for="preferred-contact">
-          Preferred contact method
-        </label>
-
-        <select id="preferred-contact" name="preferred-contact">
+        <label for="preferred-contact">Preferred contact method</label>
+        <select id="preferred-contact" name="preferred-contact" required>
+          <option value="" selected disabled>Select a contact method</option>
           <option value="Email">Email</option>
           <option value="Telephone">Telephone</option>
           <option value="WhatsApp">WhatsApp</option>
@@ -560,13 +559,14 @@
           What type of support do you need?
         </label>
 
-        <select id="service-type" name="service">
+        <select id="service-type" name="service" required>
+          <option value="" selected disabled>Select a type of support</option>
           <option value="home">Home technology</option>
           <option value="business">Small business IT</option>
           <option value="digital">Digital assistance</option>
           <option value="website">Website or digital services</option>
-          <option value="linux">Linux or older computer support</option>
-          <option value="other">Other</option>
+          <option value="linux">Revive an older computer</option>
+          <option value="other">Other / Not sure</option>
         </select>
 
         <div class="form-honeypot" aria-hidden="true">

@@ -408,6 +408,32 @@ form {
   gap: 16px;
 }
 
+.security-notice {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.security-notice h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.security-notice p {
+  margin: 0 0 0.75rem;
+}
+
+.security-notice p:last-child {
+  margin-bottom: 0;
+}
+
+.security-notice a {
+  overflow-wrap: anywhere;
+}
+
 label {
   font-size: 13px;
   font-weight: 750;

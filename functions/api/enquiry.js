@@ -1,6 +1,17 @@
 export async function onRequestPost(context) {
   try {
     const request = context.request;
+    const url = new URL(request.url);
+
+    if (
+      url.hostname !== 'www.norlium.co.uk' &&
+      url.hostname !== 'norlium.co.uk'
+    ) {
+      return jsonResponse(
+        { success: false, message: 'Invalid request origin.' },
+        403
+      );
+    }
 
     const contentType = request.headers.get('content-type') || '';
 

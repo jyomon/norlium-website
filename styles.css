@@ -1,9 +1,10 @@
+
 :root {
-  --ink: #14201d;
-  --paper: #f4f1e9;
-  --accent: #c9ff68;
-  --muted: #65706c;
-  --line: #ccd0c9;
+  --ink: #10233f;
+  --paper: #ffffff;
+  --accent: #0878d1;
+  --muted: #52647a;
+  --line: #dce5ee;
   --white: #ffffff;
   --content-width: 1440px;
 }
@@ -881,5 +882,578 @@ footer p:last-child {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* Norlium homepage layout refinements */
+
+.hero {
+  min-height: auto;
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.hero h1 {
+  line-height: 1.04;
+  margin-top: 14px;
+  margin-bottom: 22px;
+}
+
+.hero .actions {
+  margin-top: 26px;
+}
+
+#support-options {
+  padding-top: 48px;
+}
+
+@media (min-width: 1051px) {
+  main section.hero {
+    padding-top: 48px;
+    padding-bottom: 52px;
+  }
+
+  .hero {
+    min-height: 440px;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  }
+}
+
+@media (max-width: 800px) {
+  main section.hero {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .hero {
+    min-height: auto;
+    gap: 28px;
+  }
+
+  #support-options {
+    padding-top: 36px;
+  }
+}
+
+/* Norlium official header logo */
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.site-header .brand-logo {
+  display: block;
+  width: 190px;
+  height: auto;
+  max-height: 64px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+@media (max-width: 800px) {
+  .site-header .brand-logo {
+    width: 155px;
+    max-height: 54px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .brand-logo {
+    width: 140px;
+    max-height: 50px;
+  }
+}
+
+/* Norlium header and homepage width correction */
+
+.site-header {
+  width: 100%;
+  min-width: 0;
+  gap: 16px;
+  padding-left: clamp(18px, 3vw, 44px);
+  padding-right: clamp(18px, 3vw, 44px);
+}
+
+.site-header .brand-logo {
+  width: 230px;
+  max-height: 72px;
+  height: auto;
+}
+
+#main-navigation {
+  min-width: 0;
+  gap: clamp(10px, 1.2vw, 20px);
+}
+
+#main-navigation a {
+  white-space: nowrap;
+}
+
+.hero {
+  min-width: 0;
+}
+
+.hero > div,
+.hero > aside {
+  min-width: 0;
+}
+
+@media (min-width: 1051px) {
+  .hero {
+    grid-template-columns:
+      minmax(0, 1.4fr)
+      minmax(0, 0.6fr);
+    gap: clamp(24px, 3vw, 48px);
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 5vw, 76px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .site-header .brand-logo {
+    width: 180px;
+  }
+
+  #main-navigation {
+    gap: 10px;
+  }
+}
+
+/* Bring desktop navigation closer to the Norlium logo */
+
+@media (min-width: 801px) {
+  .site-header {
+    justify-content: flex-start;
+    gap: clamp(24px, 3vw, 48px);
+  }
+
+  #main-navigation {
+    margin-left: 0;
+    gap: clamp(12px, 1.3vw, 20px);
+  }
+}
+
+/* Norlium social links in header */
+
+.header-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.social-link svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.whatsapp-link {
+  color: #128c4a;
+}
+
+.facebook-link {
+  color: #1877f2;
+}
+
+.social-link:hover {
+  background: rgba(15, 49, 91, 0.08);
+}
+
+@media (min-width: 801px) {
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .header-social {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-social {
+    margin-left: auto;
+    gap: 6px;
+  }
+
+  .social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-link svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+/* Norlium navy and blue brand refinements */
+
+.site-header {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--line);
+}
+
+#main-navigation a:hover {
+  color: var(--accent);
+}
+
+#main-navigation .nav-cta {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+#main-navigation .nav-cta:hover {
+  background: #075da5;
+  color: #ffffff;
+}
+
+.hero .eyebrow,
+#support-options .eyebrow {
+  color: var(--accent);
+}
+
+.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: #075da5;
+  opacity: 1;
+}
+
+.secondary {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.secondary:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Approved Norlium homepage hero */
+
+main section.norlium-hero {
+  width: 100%;
+  max-width: none;
+  min-height: 510px;
+  padding: 72px max(7vw, 28px);
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(240, 247, 255, 0.98) 0%,
+      rgba(240, 247, 255, 0.95) 31%,
+      rgba(240, 247, 255, 0.68) 48%,
+      rgba(240, 247, 255, 0.04) 72%
+    ),
+    url("/assets/images/homepage-workspace.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.norlium-hero .hero-content {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.norlium-hero .eyebrow {
+  color: #0867c5;
+  font-size: 16px;
+  letter-spacing: 0.09em;
+}
+
+.norlium-hero h1 {
+  max-width: 790px;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #081f4a;
+  margin: 20px 0 22px;
+}
+
+.norlium-hero .lead {
+  max-width: 650px;
+  font-size: clamp(18px, 1.7vw, 25px);
+  line-height: 1.5;
+  color: #40506a;
+}
+
+.norlium-hero .primary {
+  background: #0869d5;
+  border-color: #0869d5;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 17px;
+  padding: 15px 28px;
+}
+
+@media (max-width: 800px) {
+  main section.norlium-hero {
+    min-height: 480px;
+    padding: 50px 24px;
+    background-image:
+      linear-gradient(
+        rgba(240, 247, 255, 0.94),
+        rgba(240, 247, 255, 0.82)
+      ),
+      url("/assets/images/homepage-workspace.png");
+    background-position: center;
+  }
+
+  .norlium-hero h1 {
+    font-size: clamp(36px, 8vw, 54px);
+  }
+}
+
+/* Norlium homepage service columns */
+
+#support-options {
+  background: #ffffff;
+  padding-top: 52px;
+  padding-bottom: 70px;
+}
+
+#support-options .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+#support-options .grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 36px 32px;
+  min-height: 310px;
+  border: 0;
+  border-right: 1px solid #e8edf4;
+  background: #ffffff;
+}
+
+#support-options .grid article:last-child {
+  border-right: 0;
+}
+
+#support-options .service-icon {
+  width: 112px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #edf5ff;
+  border-radius: 50%;
+  color: #092654;
+  margin-bottom: 20px;
+}
+
+#support-options .service-icon svg {
+  width: 52px;
+  height: 52px;
+}
+
+#support-options .grid article h3 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 2vw, 28px);
+  color: #092654;
+}
+
+#support-options .grid article p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #46536a;
+}
+
+#support-options .grid article .secondary {
+  margin-top: auto;
+  align-self: center;
+  border: 0;
+  padding: 8px 12px;
+  color: #0869d5;
+  background: transparent;
+}
+
+#support-options .grid article .secondary:hover {
+  color: #064d9d;
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  #support-options .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #support-options .grid article {
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid #e8edf4;
+    padding: 32px 20px;
+  }
+
+  #support-options .grid article:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Norlium homepage — service section refinement */
+
+#support-options {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+#support-options > .eyebrow {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #0869d5;
+}
+
+#support-options > h2 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+
+/* Hide the introductory paragraph */
+#support-options > .section-intro {
+  display: none;
+}
+
+/* Remove the line and box borders around service cards */
+#support-options .grid {
+  border: none;
+  margin-top: 0;
+}
+
+#support-options .grid article {
+  border-top: none;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+/* Retain subtle separators between the three columns */
+#support-options .grid article:not(:last-child) {
+  border-right: 1px solid #e8edf4;
+}
+
+@media (max-width: 800px) {
+  #support-options {
+    padding-top: 20px;
+    padding-bottom: 36px;
+  }
+
+  #support-options > h2 {
+    font-size: clamp(24px, 5vw, 30px);
+    margin-bottom: 18px;
+  }
+
+  #support-options .grid article:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #e8edf4;
+  }
+}
+
+/* Norlium Online Shop links */
+
+.header-shop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 8px 12px;
+  color: #0869d5;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid #dce5ee;
+  border-radius: 6px;
+}
+
+.header-shop svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-shop:hover {
+  background: #edf5ff;
+}
+
+.support-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: var(--content-width);
+  margin-bottom: 26px;
+}
+
+#support-options .support-heading-row h2 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.support-shop-link {
+  flex-shrink: 0;
+  color: #0869d5;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.support-shop-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 1050px) {
+  .header-shop {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-shop {
+    margin-left: auto;
+  }
+
+  .support-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .support-shop-link {
+    font-size: 15px;
   }
 }

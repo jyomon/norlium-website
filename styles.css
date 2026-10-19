@@ -2349,28 +2349,71 @@ button.enquiry-submit:focus-visible {
     width: 100%;
   }
 }
-
-/* Norlium service images — larger, edge-to-edge presentation */
+/* Norlium services — complete images without cropping */
 
 #services .grid > article .service-image {
   display: block;
   width: 100%;
   max-width: none;
   height: 210px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   margin: 0 0 20px;
-  padding: 0;
-  background: transparent;
-  border: none;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #e1e8f2;
   border-radius: 10px;
-  box-shadow: none;
   box-sizing: border-box;
+  box-shadow: none;
 }
 
 @media (max-width: 800px) {
   #services .grid > article .service-image {
     height: auto;
     aspect-ratio: 16 / 9;
+    object-fit: contain;
   }
+}
+/* Norlium service cards — refined layout */
+
+/* Hide service numbers */
+#services .grid > article > b {
+  display: none;
+}
+
+/* Place titles above images visually */
+#services .grid > article {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centre titles */
+#services .grid > article h3 {
+  order: 1;
+  text-align: center;
+  margin: 0 0 14px;
+}
+
+/* Enlarge images and reduce surrounding margins */
+#services .grid > article .service-image {
+  order: 2;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  margin: 0 0 16px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+/* Keep descriptions below images */
+#services .grid > article p {
+  order: 3;
+  margin: 0;
+  text-align: left;
 }

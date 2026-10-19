@@ -1169,7 +1169,7 @@ main section.norlium-hero {
       rgba(240, 247, 255, 0.68) 48%,
       rgba(240, 247, 255, 0.04) 72%
     ),
-    url("/assets/images/homepage-workspace.png");
+    url("/assets/images/homepage-workspace.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1221,7 +1221,7 @@ main section.norlium-hero {
         rgba(240, 247, 255, 0.94),
         rgba(240, 247, 255, 0.82)
       ),
-      url("/assets/images/homepage-workspace.png");
+      url("/assets/images/homepage-workspace.webp");
     background-position: center;
   }
 
@@ -2347,5 +2347,30 @@ button.enquiry-submit:focus-visible {
 @media (max-width: 600px) {
   button.enquiry-submit {
     width: 100%;
+  }
+}
+
+/* Norlium service images — larger, edge-to-edge presentation */
+
+#services .grid > article .service-image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 210px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 0 20px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  #services .grid > article .service-image {
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }

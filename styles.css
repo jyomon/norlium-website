@@ -2308,3 +2308,44 @@ footer {
     padding: 12px 0 0;
   }
 }
+/* Norlium enquiry form: dedicated submit button */
+
+button.enquiry-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+
+  min-height: 48px;
+  padding: 14px 24px;
+
+  background-color: #0878d1;
+  color: #ffffff;
+  border: 2px solid #0878d1;
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+}
+
+button.enquiry-submit:hover {
+  background-color: #075da5;
+  border-color: #075da5;
+  color: #ffffff;
+}
+
+button.enquiry-submit:focus-visible {
+  outline: 3px solid #172b4d;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  button.enquiry-submit {
+    width: 100%;
+  }
+}

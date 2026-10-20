@@ -2417,3 +2417,299 @@ button.enquiry-submit:focus-visible {
   margin: 0;
   text-align: left;
 }
+/* IT Advice category section */
+
+#advice-categories {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #cbd7e6;
+}
+
+#advice-categories > p:not(.eyebrow) {
+  max-width: 750px;
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+  #advice-categories {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+/* Dedicated Services page — homepage card design */
+
+#service-list .grid > article {
+  background: #ffffff;
+  border: 1px solid #d6e2f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+#service-list .grid > article > b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 52px;
+  padding: 0 8px;
+  background: #e9f3ff;
+  color: #0074d9;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+#service-list .grid > article h3 {
+  margin: 0 0 16px;
+  color: #102b4e;
+}
+
+#service-list .grid > article p {
+  line-height: 1.65;
+  color: #52647a;
+}
+
+@media (max-width: 600px) {
+  #service-list .grid > article {
+    padding: 20px;
+  }
+}
+/* Digital Assistance — matching service card design */
+
+#support-areas .grid > article {
+  background: #ffffff;
+  border: 1px solid #d6e2f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+#support-areas .grid > article > b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 52px;
+  padding: 0 8px;
+  background: #e9f3ff;
+  color: #0074d9;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+#support-areas .grid > article h3 {
+  margin: 0 0 16px;
+  color: #102b4e;
+}
+
+#support-areas .grid > article p {
+  line-height: 1.65;
+  color: #52647a;
+}
+
+@media (max-width: 600px) {
+  #support-areas .grid > article {
+    padding: 20px;
+  }
+}
+/* Digital Assistance — matching homepage icons */
+
+#support-areas .digital-service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: #e9f3ff;
+  color: #0074d9;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+#support-areas .digital-service-icon svg {
+  width: 28px;
+  height: 28px;
+}
+/* Digital Assistance — card spacing refinement */
+
+#support-areas .grid {
+  gap: 20px;
+}
+
+#support-areas .grid > article {
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  #support-areas .grid {
+    gap: 14px;
+  }
+}
+/* Business IT — matching homepage service cards */
+
+#business-services .grid {
+  gap: 20px;
+}
+
+#business-services .grid > article {
+  background: #ffffff;
+  border: 1px solid #d6e2f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+#business-services .business-service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: #e9f3ff;
+  color: #0074d9;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+#business-services .business-service-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+#business-services .grid > article h3 {
+  margin: 0 0 16px;
+  color: #102b4e;
+}
+
+#business-services .grid > article p {
+  line-height: 1.65;
+  color: #52647a;
+}
+
+@media (max-width: 600px) {
+  #business-services .grid {
+    gap: 14px;
+  }
+
+  #business-services .grid > article {
+    padding: 20px;
+  }
+}
+/* Digital Assistance — hero button correction */
+
+.hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero .actions a.primary,
+.hero .actions a.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid #0869d5;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+.hero .actions a.primary {
+  background: #0869d5;
+  color: #ffffff;
+}
+
+.hero .actions a.secondary {
+  background: #ffffff;
+  color: #0869d5;
+}
+
+.hero .actions a.primary:hover {
+  background: #0755ac;
+}
+
+.hero .actions a.secondary:hover {
+  background: #e9f3ff;
+}
+
+@media (max-width: 600px) {
+  .hero .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .actions a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+/* Homepage contact section — button styling */
+
+#contact .contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+#contact .contact-actions a.primary,
+#contact .contact-actions a.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid #0869d5;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  box-sizing: border-box;
+  visibility: visible;
+  opacity: 1;
+}
+
+#contact .contact-actions a.primary {
+  background: #0869d5;
+  color: #ffffff;
+}
+
+#contact .contact-actions a.secondary {
+  background: #ffffff;
+  color: #0869d5;
+}
+
+#contact .contact-actions a.primary:hover {
+  background: #0755ac;
+}
+
+#contact .contact-actions a.secondary:hover {
+  background: #e9f3ff;
+}
+
+@media (max-width: 600px) {
+  #contact .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #contact .contact-actions a {
+    width: 100%;
+  }
+}

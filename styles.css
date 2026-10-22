@@ -1,4 +1,3 @@
-.
 :root {
   --ink: #10233f;
   --paper: #ffffff;
@@ -2711,5 +2710,596 @@ button.enquiry-submit:focus-visible {
 
   #contact .contact-actions a {
     width: 100%;
+  }
+}
+/* ==================================================
+   NORLIUM — Global Responsive Section Spacing
+   ================================================== */
+
+/* Desktop */
+@media (min-width: 1051px) {
+  main section:not(.hero) {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1050px) {
+  main section:not(.hero) {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  main section:not(.hero) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+/* Services page — consistent card spacing */
+
+#service-list .grid {
+  gap: 16px;
+  border: none;
+}
+
+#service-list .grid > article {
+  border: 1px solid #d7e2ef;
+  border-left: 4px solid #2563eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  #service-list .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+/* Services page — Need Support button */
+
+#need-support a.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  margin-top: 16px;
+  background: #0869d5;
+  color: #ffffff;
+  border: 1px solid #0869d5;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+#need-support a.primary:hover {
+  background: #0755ac;
+  color: #ffffff;
+}
+
+#need-support a.primary:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+/* ==========================================
+   SERVICES PAGE — Hero spacing refinement
+   ========================================== */
+
+main section.service-hero {
+  min-height: 0;
+  align-items: center;
+}
+
+/* Clear separation between label and heading */
+.service-hero .eyebrow {
+  margin: 0 0 24px;
+}
+
+.service-hero h1 {
+  margin: 0 0 28px;
+}
+
+/* Introduction */
+.service-hero .lead {
+  margin: 0 0 32px;
+}
+
+/* Hero buttons */
+.service-hero .actions {
+  margin-top: 0;
+  gap: 14px;
+}
+
+/* Desktop — balanced introduction */
+@media (min-width: 1051px) {
+  main section.service-hero {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1050px) {
+  main section.service-hero {
+    padding-top: 60px;
+    padding-bottom: 72px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  main section.service-hero {
+    padding-top: 40px;
+    padding-bottom: 56px;
+    gap: 28px;
+  }
+
+  .service-hero .eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .service-hero h1 {
+    margin-bottom: 22px;
+  }
+
+  .service-hero .lead {
+    margin-bottom: 26px;
+  }
+}
+
+/* Keep anchor targets clear of the navigation */
+#service-list {
+  scroll-margin-top: 85px;
+}
+/* ==========================================
+   NORLIUM — Older Computer Reuse
+   ========================================== */
+
+#linux {
+  scroll-margin-top: 85px;
+}
+
+#linux .eyebrow {
+  margin-bottom: 24px;
+}
+
+#linux h2 {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+#linux .rule {
+  margin-top: 28px;
+  margin-bottom: 0;
+}
+
+/* Four-step process */
+
+#linux .reuse-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 42px;
+  padding-top: 30px;
+  border-top: 1px solid #d7e2ef;
+}
+
+#linux .reuse-step {
+  background: #f5f8fc;
+  border: 1px solid #d7e2ef;
+  border-top: 4px solid #2563eb;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 0;
+}
+
+#linux .reuse-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #e7f1ff;
+  color: #0869d5;
+  border-radius: 10px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+#linux .reuse-step h3 {
+  margin: 0 0 12px;
+  color: #09244b;
+  font-size: 21px;
+}
+
+#linux .reuse-step p {
+  margin: 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Assessment button */
+
+#linux .reuse-action {
+  margin-top: 28px;
+}
+
+#linux .reuse-action a.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  background: #0869d5;
+  color: #ffffff;
+  border: 1px solid #0869d5;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+#linux .reuse-action a.primary:hover {
+  background: #0755ac;
+  color: #ffffff;
+}
+
+#linux .reuse-action a.primary:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  #linux .reuse-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  #linux .eyebrow {
+    margin-bottom: 18px;
+  }
+
+  #linux h2 {
+    margin-bottom: 22px;
+  }
+
+  #linux .reuse-process {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 28px;
+    padding-top: 24px;
+  }
+
+  #linux .reuse-step {
+    padding: 20px;
+  }
+
+  #linux .reuse-action a.primary {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Older Computer Reuse — process icons */
+
+#linux .reuse-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  background: #e7f1ff;
+  color: #0869d5;
+}
+
+#linux .reuse-icon svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+/* ==========================================
+   NORLIUM — Digital Assistance Mobile Spacing
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  /* Reduce space below the support cards */
+  main section#support-areas {
+    padding-bottom: 16px;
+  }
+
+  /* Reduce space above the following feature */
+  main section#support-areas + section.feature {
+    padding-top: 16px;
+  }
+
+}
+/* Digital Assistance — bottom call-to-action */
+
+main .split a.digital-assistance-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 16px;
+  padding: 12px 22px;
+  background-color: #0869d5;
+  color: #ffffff;
+  border: 1px solid #0869d5;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+main .split a.digital-assistance-cta:hover {
+  background-color: #0755ac;
+  color: #ffffff;
+}
+
+main .split a.digital-assistance-cta:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+/* ==========================================
+   NORLIUM — Mobile Content Spacing Refinement
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  /* Reduce space between stacked columns */
+  main section.split {
+    row-gap: 20px;
+  }
+
+  /* Improve heading-to-content spacing */
+  main section.split h2 {
+    margin-bottom: 20px;
+  }
+
+  /* Keep support section introductions compact */
+  #support-areas {
+    padding-top: 24px;
+  }
+
+}
+/* Digital Assistance — principles card spacing */
+
+@media (max-width: 600px) {
+  main section.trust {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  main section.trust > div {
+    border-bottom: 0;
+  }
+}
+/* ==========================================
+   NORLIUM — Services Principles Mobile Layout
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  /* Equal-width cards with consistent spacing */
+  main section.trust {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  main section.trust > div {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-bottom: 0;
+  }
+
+}
+
+/* Services page — balanced principles spacing */
+
+@media (max-width: 600px) {
+  main section.trust[aria-label="Norlium service principles"] {
+    padding-top: 16px !important;
+    padding-bottom: 30px !important;
+  }
+}
+/* ==========================================
+   NORLIUM — Service Delivery Cards
+   ========================================== */
+
+#service-delivery {
+  align-items: start;
+}
+
+#service-delivery .delivery-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+#service-delivery .delivery-card {
+  background: #f7f9fc;
+  border: 1px solid #cbd7e6;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  padding: 22px 24px;
+  min-height: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#service-delivery .delivery-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #10233f;
+}
+
+#service-delivery .delivery-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #52647a;
+}
+
+/* Mobile improvements */
+
+@media (max-width: 600px) {
+
+  main section#service-delivery {
+    padding-top: 30px;
+    padding-bottom: 24px;
+    row-gap: 20px;
+  }
+
+  #service-delivery .delivery-intro h2 {
+    margin: 8px 0 0;
+  }
+
+  #service-delivery .delivery-cards {
+    gap: 16px;
+  }
+
+  #service-delivery .delivery-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #service-delivery .delivery-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+
+  main section#service-delivery + section.pricing {
+    padding-top: 30px;
+  }
+}
+/* Norlium — Contact form anchor navigation */
+
+#enquiry-form {
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 600px) {
+  #enquiry-form {
+    scroll-margin-top: 85px;
+  }
+}
+
+
+/* NORLIUM — Compact process cards with icons */
+
+#how-it-works .process-grid {
+  gap: 16px;
+  align-items: stretch;
+}
+
+#how-it-works .process-card {
+  min-height: 0;
+  height: auto;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+#how-it-works .process-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+  background: #e7f1ff;
+  color: #0869d5;
+  border-radius: 12px;
+}
+
+#how-it-works .process-icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+#how-it-works .process-card h3 {
+  margin: 0 0 10px;
+  font-size: 23px;
+  line-height: 1.25;
+}
+
+#how-it-works .process-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  #how-it-works .process-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  #how-it-works .process-card {
+    padding: 20px;
+  }
+
+  #how-it-works .process-card h3 {
+    font-size: 21px;
+  }
+}
+
+/* ==========================================
+   NORLIUM — Homepage Services Card Spacing
+   ========================================== */
+
+#services .grid {
+  display: grid;
+  gap: 16px;
+  border: none;
+}
+
+#services .grid > article {
+  border: 1px solid #cbd7e6;
+  border-left: 4px solid #2563eb;
+  border-radius: 10px;
+  background: #f7f9fc;
+  overflow: hidden;
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  #services .grid {
+    gap: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #services .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }

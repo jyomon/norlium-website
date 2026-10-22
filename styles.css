@@ -2856,14 +2856,14 @@ main section.service-hero {
 
 /* Keep anchor targets clear of the navigation */
 #service-list {
-  scroll-margin-top: 85px;
+  scroll-margin-top: 0;
 }
 /* ==========================================
    NORLIUM — Older Computer Reuse
    ========================================== */
 
 #linux {
-  scroll-margin-top: 85px;
+  scroll-margin-top: 0;
 }
 
 #linux .eyebrow {
@@ -3301,5 +3301,231 @@ main .split a.digital-assistance-cta:focus-visible {
   #services .grid {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+}
+
+/* NORLIUM — Older Computer Reuse mobile spacing correction */
+@media (max-width: 600px) {
+  main section#linux {
+    padding-top: 36px;
+    padding-bottom: 40px;
+  }
+
+  #linux .reuse-process {
+    margin-top: 22px;
+    padding-top: 20px;
+    gap: 14px;
+  }
+
+  #linux .reuse-step {
+    min-height: 0;
+    height: auto;
+    padding: 18px;
+  }
+
+  #linux .reuse-icon {
+    margin-bottom: 12px;
+  }
+
+  #linux .reuse-step h3 {
+    margin: 0 0 8px;
+  }
+
+  #linux .reuse-action {
+    margin-top: 20px;
+  }
+}
+
+/* ==========================================
+   NORLIUM — Homepage Typography and Cards
+   ========================================== */
+
+/* Main homepage heading */
+#top.hero h1 {
+  font-size: clamp(36px, 4.2vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+/* Business Services heading */
+#services h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* Business Services cards */
+#services .grid {
+  gap: 16px;
+  border: 0;
+}
+
+#services .grid article {
+  min-height: 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #dce5ee;
+  border-radius: 12px;
+}
+
+#services .grid article h3 {
+  margin-top: 16px;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+#services .grid article p {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Mobile refinements */
+@media (max-width: 600px) {
+  #top.hero h1 {
+    font-size: clamp(32px, 8vw, 42px);
+  }
+
+  #services .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  #services .grid article {
+    padding: 20px;
+  }
+}
+
+/* NORLIUM — Small Business IT heading refinement */
+#business h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 600px) {
+  #business h2 {
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.25;
+  }
+}
+
+/* ==========================================
+   NORLIUM — Services Page Hero Refinement
+   ========================================== */
+
+.service-hero h1 {
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+/* Reduce unnecessary space between hero and services */
+@media (min-width: 1051px) {
+  main section.service-hero {
+    padding-top: 52px;
+    padding-bottom: 36px;
+  }
+
+  main section#service-list {
+    padding-top: 36px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1050px) {
+  main section.service-hero {
+    padding-bottom: 40px;
+  }
+
+  main section#service-list {
+    padding-top: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-hero h1 {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  main section.service-hero {
+    padding-bottom: 28px;
+  }
+
+  main section#service-list {
+    padding-top: 28px;
+  }
+}
+
+/* NORLIUM — Services list heading refinement */
+#service-list h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 600px) {
+  #service-list h2 {
+    font-size: clamp(26px, 7vw, 34px);
+  }
+}
+
+/* NORLIUM — Services page icon cards */
+#service-list .grid {
+  gap: 16px;
+  border: 0;
+}
+
+#service-list .grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #dce5ee;
+  border-radius: 12px;
+}
+
+#service-list .service-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: #eaf4ff;
+  color: #0869d5;
+}
+
+#service-list .service-card-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+#service-list .grid article h3 {
+  margin: 0 0 16px;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+#service-list .grid article p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#service-list .grid article p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  #service-list .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  #service-list .grid article {
+    padding: 20px;
   }
 }

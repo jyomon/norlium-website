@@ -4675,3 +4675,11 @@ main section#top.norlium-hero {
     padding-bottom: 36px;
   }
 }
+
+/* NORLIUM — Mobile section spacing refinement */
+@media (max-width: 800px) {
+  main section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

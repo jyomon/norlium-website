@@ -27,6 +27,23 @@ const enquiryForm = document.querySelector('#enquiry-form');
 const formMessage = document.querySelector('#form-message');
 
 if (enquiryForm && formMessage) {
+  const preferredContactSelect = enquiryForm.querySelector('#preferred-contact');
+  const telephoneInput = enquiryForm.querySelector('#telephone');
+
+  function updateTelephoneRequirement() {
+    const needsTelephone =
+      preferredContactSelect.value === 'Telephone' ||
+      preferredContactSelect.value === 'WhatsApp';
+
+    telephoneInput.required = needsTelephone;
+  }
+
+  preferredContactSelect.addEventListener('change', updateTelephoneRequirement);
+  enquiryForm.addEventListener('reset', () => {
+    telephoneInput.required = false;
+  });
+  updateTelephoneRequirement();
+
   enquiryForm.addEventListener('submit', async event => {
     event.preventDefault();
 

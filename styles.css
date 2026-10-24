@@ -258,7 +258,7 @@ main section > * {
 }
 
 h2 {
-  font-size: clamp(38px, 5vw, 70px);
+  font-size: clamp(28px, 3vw, 36px);
   letter-spacing: -0.045em;
   line-height: 1;
   margin: 15px 0 45px;
@@ -641,7 +641,7 @@ footer p:last-child {
   }
 
   h2 {
-    font-size: clamp(38px, 4vw, 58px);
+    font-size: clamp(28px, 3vw, 36px);
     margin-bottom: 36px;
   }
 
@@ -770,7 +770,7 @@ footer p:last-child {
   }
 
   .hero h1 {
-    font-size: clamp(48px, 14vw, 68px);
+    font-size: clamp(28px, 6vw, 36px);
     line-height: 0.94;
   }
 
@@ -842,11 +842,11 @@ footer p:last-child {
   }
 
   .hero h1 {
-    font-size: clamp(44px, 13vw, 58px);
+    font-size: clamp(28px, 7vw, 34px);
   }
 
   h2 {
-    font-size: clamp(34px, 11vw, 48px);
+    font-size: clamp(24px, 6vw, 30px);
   }
 
   article {
@@ -1168,7 +1168,7 @@ main section.norlium-hero {
       rgba(240, 247, 255, 0.68) 48%,
       rgba(240, 247, 255, 0.04) 72%
     ),
-    url("/assets/images/homepage-workspace.webp");
+    url("/assets/images/homepage-services-workspace.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1220,7 +1220,7 @@ main section.norlium-hero {
         rgba(240, 247, 255, 0.94),
         rgba(240, 247, 255, 0.82)
       ),
-      url("/assets/images/homepage-workspace.webp");
+      url("/assets/images/homepage-services-workspace.png");
     background-position: center;
   }
 
@@ -2871,8 +2871,11 @@ main section.service-hero {
 }
 
 #linux h2 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 #linux .rule {
@@ -2886,8 +2889,8 @@ main section.service-hero {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 42px;
-  padding-top: 30px;
+  margin-top: 26px;
+  padding-top: 22px;
   border-top: 1px solid #d7e2ef;
 }
 
@@ -2929,7 +2932,7 @@ main section.service-hero {
 /* Assessment button */
 
 #linux .reuse-action {
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 #linux .reuse-action a.primary {
@@ -3527,5 +3530,1148 @@ main .split a.digital-assistance-cta:focus-visible {
 
   #service-list .grid article {
     padding: 20px;
+  }
+}
+
+/* ==========================================
+   NORLIUM — Site-wide Mobile Section Spacing
+   24 October 2026
+   ========================================== */
+
+@media (min-width: 601px) and (max-width: 800px) {
+  main section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  main section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+}
+
+
+/* ==========================================
+   NORLIUM — Consistent Desktop Page Layout
+   24 October 2026
+   ========================================== */
+
+@media (min-width: 1051px) {
+
+  /* Consistent heading scale across main pages */
+  main .hero h1,
+  main section.service-hero h1,
+  main section.norlium-hero h1 {
+    font-size: clamp(25px, 2.7vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  /* Homepage hero — compact desktop layout */
+  main section.norlium-hero {
+    min-height: 320px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .norlium-hero .eyebrow {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .norlium-hero h1 {
+    margin-top: 12px;
+    margin-bottom: 18px;
+  }
+
+  .norlium-hero .lead {
+    font-size: 19px;
+    line-height: 1.55;
+  }
+
+  /* Business IT and Digital Assistance — compact desktop hero */
+  main section.hero:not(.norlium-hero) {
+    min-height: 0;
+    padding-top: 32px;
+    padding-bottom: 36px;
+    gap: 36px;
+  }
+
+  main section.hero:not(.norlium-hero) .lead {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* More balanced two-column layout */
+  main section.hero:not(.norlium-hero) {
+    grid-template-columns:
+      minmax(0, 1.7fr)
+      minmax(280px, 0.7fr);
+  }
+}
+
+/* NORLIUM — Match homepage hero heading to support heading */
+#top.norlium-hero h1 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 600px) {
+  #top.norlium-hero h1 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+}
+
+/* NORLIUM — Consistent secondary-page hero typography */
+@media (max-width: 1050px) {
+  main section.hero:not(.norlium-hero) h1 {
+    font-size: clamp(24px, 5vw, 30px);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* NORLIUM — Services page layout */
+main section.services-page-hero {
+  display: block;
+  min-height: 0;
+  padding-top: 36px;
+  padding-bottom: 40px;
+}
+
+main section.services-page-hero > div {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main section.services-page-hero h1 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+main section.services-page-hero .lead {
+  max-width: 850px;
+  margin-bottom: 24px;
+}
+
+main section.services-page-hero aside {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 0 24px;
+  padding: 24px 28px;
+  border: 1px solid #dce5ee;
+  border-radius: 10px;
+  background: #f5f9ff;
+}
+
+main section.services-page-hero aside ol {
+  margin-bottom: 0;
+}
+
+main section.services-page-hero .actions {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  main section.services-page-hero {
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+
+  main section.services-page-hero h1 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+
+  main section.services-page-hero aside {
+    padding: 18px;
+  }
+}
+
+/* NORLIUM — Services What to Expect image background */
+main section.services-page-hero aside {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(245, 249, 255, 0.98) 0%,
+      rgba(245, 249, 255, 0.96) 38%,
+      rgba(245, 249, 255, 0.76) 60%,
+      rgba(245, 249, 255, 0.15) 100%
+    ),
+    url("/assets/images/services-what-to-expect.webp");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+main section.services-page-hero aside ol {
+  max-width: 570px;
+}
+
+@media (max-width: 600px) {
+  main section.services-page-hero aside {
+    background-image:
+      linear-gradient(
+        rgba(245, 249, 255, 0.94),
+        rgba(245, 249, 255, 0.94)
+      ),
+      url("/assets/images/services-what-to-expect.webp");
+  }
+}
+
+/* NORLIUM — Services page section spacing refinement */
+
+/* Reduce space below the hero buttons */
+main section.services-page-hero {
+  padding-bottom: 12px;
+}
+
+/* Bring the next section closer */
+main section#service-list {
+  padding-top: 20px;
+}
+
+/* Keep the SERVICES label close to its heading */
+#service-list > .eyebrow {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#service-list > h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+/* Compact mobile spacing */
+@media (max-width: 600px) {
+  main section.services-page-hero {
+    padding-bottom: 12px;
+  }
+
+  main section#service-list {
+    padding-top: 20px;
+  }
+}
+
+/* NORLIUM — Services final layout, 24 October 2026 */
+
+/* Compact single-column hero */
+main section.services-page-hero {
+  display: block;
+  min-height: 0;
+  padding-top: 36px;
+  padding-bottom: 8px;
+}
+
+/* Align content with the approved design */
+main section.services-page-hero > div {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main section.services-page-hero h1 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+}
+
+/* Keep the introductory paragraph close to the panel */
+main section.services-page-hero .lead {
+  max-width: 850px;
+  margin-bottom: 24px;
+}
+
+/* Preserve the light-blue What to expect panel */
+main section.services-page-hero aside {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 0 24px;
+  padding: 24px 28px;
+  border: 1px solid #dce5ee;
+  border-radius: 10px;
+  background: #f5f9ff;
+  background-image: none;
+}
+
+/* Preserve the numbered steps */
+main section.services-page-hero aside ol {
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+/* Buttons directly below the panel */
+main section.services-page-hero .actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Reduce gap before the SERVICES section */
+main section#service-list {
+  padding-top: 24px;
+}
+
+#service-list > .eyebrow {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#service-list > h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 600px) {
+  main section.services-page-hero {
+    padding-top: 28px;
+    padding-bottom: 8px;
+  }
+
+  main section.services-page-hero h1 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+
+  main section.services-page-hero aside {
+    padding: 18px;
+  }
+
+  main section#service-list {
+    padding-top: 20px;
+  }
+}
+
+/* END — Services final layout */
+
+/* NORLIUM — Services section heading refinement */
+main section#service-list > h2 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 600px) {
+  main section#service-list > h2 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+}
+
+/* NORLIUM — Services cards refinement */
+#service-list .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  border: 0;
+}
+
+#service-list .grid article {
+  min-height: 0;
+  padding: 24px;
+  border: 1px solid #dce5ee;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+#service-list .grid article h3 {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.25;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+#service-list .grid article p {
+  line-height: 1.6;
+}
+
+@media (min-width: 601px) and (max-width: 1050px) {
+  #service-list .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  #service-list .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  #service-list .grid article {
+    padding: 20px;
+  }
+}
+
+/* NORLIUM — Homepage Digital Assistance Refinement */
+
+main section#digital-assistance {
+  min-height: 0;
+  padding-top: 44px;
+  padding-bottom: 44px;
+  column-gap: 48px;
+  row-gap: 20px;
+}
+
+#digital-assistance h2 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+#digital-assistance .eyebrow {
+  margin-bottom: 12px;
+}
+
+#digital-assistance p {
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  main section#digital-assistance {
+    grid-template-columns: 1fr;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    row-gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  #digital-assistance h2 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+}
+
+/* NORLIUM — Digital Assistance page layout */
+
+main section.digital-page-hero {
+  display: block;
+  min-height: 0;
+  padding-top: 36px;
+  padding-bottom: 8px;
+}
+
+main section.digital-page-hero > div {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main section.digital-page-hero h1 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+main section.digital-page-hero .lead {
+  max-width: 850px;
+  margin-bottom: 24px;
+}
+
+main section.digital-page-hero aside {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 0 24px;
+  padding: 24px 28px;
+  border: 1px solid #dce5ee;
+  border-radius: 10px;
+  background: #f5f9ff;
+}
+
+main section.digital-page-hero aside ol {
+  margin-bottom: 0;
+}
+
+main section.digital-page-hero .actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Compact next section */
+main section#support-areas {
+  padding-top: 24px;
+}
+
+#support-areas > .eyebrow {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#support-areas > h2 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 600px) {
+  main section.digital-page-hero {
+    padding-top: 28px;
+    padding-bottom: 8px;
+  }
+
+  main section.digital-page-hero h1,
+  main section#support-areas > h2 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+
+  main section.digital-page-hero aside {
+    padding: 18px;
+  }
+
+  main section#support-areas {
+    padding-top: 20px;
+  }
+}
+
+/* ==========================================
+   NORLIUM — Shared Four-Step Support Cards
+   Services / Digital Assistance / Business IT
+   ========================================== */
+
+main section.hero aside.support-steps {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 24px;
+  padding: 24px;
+  background: #f1f7ff;
+  background-image: none;
+  border: 1px solid #d9e8fa;
+  border-radius: 12px;
+}
+
+main section.hero .support-steps > h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 22px;
+  color: #092654;
+}
+
+main section.hero .support-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+main section.hero .support-steps-grid > li.support-step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+  min-height: 240px;
+  margin: 0;
+  padding: 20px 14px;
+  background: #ffffff;
+  border: 1px solid #d9e8fa;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.support-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: #e7f2ff;
+  color: #0869d5;
+}
+
+.support-step-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.support-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: #d9edff;
+  color: #0869d5;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+main section.hero .support-step-card h3 {
+  margin: 0 0 10px;
+  color: #092654;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+main section.hero .support-step-card p {
+  margin: 0;
+  color: #52647a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Full-width panels for all three pages */
+main section.services-page-hero > div,
+main section.digital-page-hero > div,
+main section.business-page-hero > div {
+  max-width: 1100px;
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  main section.hero .support-steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  main section.hero aside.support-steps {
+    padding: 16px;
+  }
+
+  main section.hero .support-steps > h2 {
+    font-size: 22px;
+  }
+
+  main section.hero .support-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  main section.hero .support-steps-grid > li.support-step-card {
+    min-height: 0;
+    padding: 18px;
+  }
+}
+
+/* NORLIUM — Remove numbers from support cards */
+.support-step-number {
+  display: none;
+}
+
+/* NORLIUM — Business IT final hero layout */
+
+main section.business-page-hero {
+  display: block;
+  min-height: 0;
+  padding-top: 36px;
+  padding-bottom: 8px;
+}
+
+main section.business-page-hero > div {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main section.business-page-hero h1 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+main section.business-page-hero .lead {
+  max-width: 850px;
+  margin-bottom: 24px;
+}
+
+main section.business-page-hero aside.support-steps {
+  margin-bottom: 24px;
+}
+
+main section.business-page-hero .actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Business Services section */
+main section#business-services {
+  padding-top: 24px;
+}
+
+#business-services > .eyebrow {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#business-services > h2 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 600px) {
+  main section.business-page-hero {
+    padding-top: 28px;
+    padding-bottom: 8px;
+  }
+
+  main section.business-page-hero h1,
+  main section#business-services > h2 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+
+  main section#business-services {
+    padding-top: 20px;
+  }
+}
+
+/* NORLIUM — Business IT service cards redesign */
+
+#business-services .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  border: none;
+  margin-top: 28px;
+}
+
+#business-services .grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  padding: 26px;
+  border: 1px solid #dce8f7;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(16, 35, 63, 0.035);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#business-services .grid article:hover {
+  transform: translateY(-3px);
+  border-color: #b8d7f5;
+  box-shadow: 0 10px 25px rgba(16, 35, 63, 0.08);
+}
+
+#business-services .grid article h3 {
+  font-size: 21px;
+  line-height: 1.25;
+  margin: 16px 0 12px;
+  color: #092654;
+}
+
+#business-services .grid article p {
+  margin: 0;
+  color: #52647a;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (min-width: 601px) and (max-width: 1050px) {
+  #business-services .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  #business-services .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  #business-services .grid article {
+    padding: 20px;
+  }
+
+  #business-services .grid article h3 {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #business-services .grid article {
+    transition: none;
+  }
+
+  #business-services .grid article:hover {
+    transform: none;
+  }
+}
+/* NORLIUM — Homepage section illustrations */
+
+#digital-assistance .section-illustration,
+#about .section-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-top: 24px;
+  border-radius: 12px;
+  border: 1px solid #dce8f7;
+}
+
+@media (max-width: 600px) {
+  #digital-assistance .section-illustration,
+  #about .section-illustration {
+    margin-top: 18px;
+    border-radius: 10px;
+  }
+}
+/* NORLIUM — About section image alignment */
+
+@media (min-width: 801px) {
+  #about .section-illustration {
+    height: 360px;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+/* NORLIUM — Consolidated Homepage Pricing */
+
+main section#pricing {
+  background: #f4f8fd;
+  color: #10233f;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+#pricing .eyebrow {
+  color: #0869d5;
+  margin-bottom: 10px;
+}
+
+#pricing h2 {
+  color: #092654;
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+#pricing p {
+  color: #40506a;
+  line-height: 1.65;
+}
+
+#pricing strong {
+  color: #092654;
+}
+
+main section#pricing .pricing-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 26px 0;
+  border: none;
+  background: transparent;
+}
+
+main section#pricing .pricing-options > div {
+  min-width: 0;
+  min-height: 0;
+  padding: 26px;
+  border: 1px solid #dce8f7;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(16, 35, 63, 0.04);
+}
+
+@media (min-width: 601px) and (max-width: 1050px) {
+  main section#pricing .pricing-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  main section#pricing {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  #pricing h2 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+
+  main section#pricing .pricing-options {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  main section#pricing .pricing-options > div {
+    padding: 20px;
+  }
+}
+
+/* NORLIUM — Homepage Trust Cards Refinement */
+
+main section.trust {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding-top: 36px;
+  padding-bottom: 48px;
+  border: 0;
+  background: #ffffff;
+}
+
+main section.trust > div {
+  min-width: 0;
+  min-height: 0;
+  padding: 24px;
+  border: 1px solid #dce8f7;
+  border-radius: 12px;
+  background: #f8fbff;
+  box-shadow: 0 4px 14px rgba(16, 35, 63, 0.035);
+}
+
+main section.trust > div b {
+  display: block;
+  margin-bottom: 12px;
+  color: #092654;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+main section.trust > div p {
+  margin: 0;
+  color: #52647a;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (min-width: 601px) and (max-width: 1050px) {
+  main section.trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  main section.trust {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+
+  main section.trust > div {
+    padding: 20px;
+  }
+}
+/* NORLIUM — Homepage trust icons */
+
+main section.trust .trust-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: #e7f1ff;
+  color: #0869d5;
+}
+
+main section.trust .trust-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+
+/* NORLIUM — Digital Assistance Service Cards Refinement */
+
+main section#support-areas .grid {
+  border: none;
+  border-top: 0;
+  border-left: 0;
+  gap: 20px;
+  background: transparent;
+}
+
+main section#support-areas .grid > article {
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #dce8f7;
+  border-top: 4px solid #0878d1;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(16, 35, 63, 0.04);
+}
+
+main section#support-areas .grid > article h3 {
+  color: #092654;
+  line-height: 1.3;
+}
+
+main section#support-areas .grid > article p {
+  color: #52647a;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  main section#support-areas .grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  main section#support-areas .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  main section#support-areas .grid > article {
+    padding: 20px;
+  }
+}
+
+/* NORLIUM — Homepage hero refresh */
+
+main section#top.norlium-hero {
+  min-height: 440px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+#top.norlium-hero .hero-content {
+  max-width: var(--content-width);
+}
+
+#top.norlium-hero h1 {
+  max-width: 740px;
+  font-size: clamp(32px, 3.2vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+#top.norlium-hero h1 span {
+  display: block;
+  color: #0869d5;
+}
+
+#top.norlium-hero .lead {
+  max-width: 620px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+#top.norlium-hero .hero-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 720px;
+  margin: 22px 0;
+}
+
+#top.norlium-hero .hero-services span {
+  padding: 9px 12px;
+  border: 1px solid #d6e6fa;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #12345c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#top.norlium-hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+@media (max-width: 800px) {
+  main section#top.norlium-hero {
+    min-height: 0;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  #top.norlium-hero h1 {
+    font-size: clamp(30px, 6vw, 40px);
+  }
+
+  #top.norlium-hero .lead {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #top.norlium-hero h1 {
+    font-size: 30px;
+  }
+
+  #top.norlium-hero .hero-services {
+    gap: 8px;
+  }
+
+  #top.norlium-hero .hero-services span {
+    font-size: 12px;
+  }
+
+  #top.norlium-hero .actions a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* NORLIUM — Compact homepage support section */
+
+#support-options {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+#support-options .eyebrow {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+#support-options .support-heading-row {
+  margin-bottom: 14px;
+}
+
+#support-options .support-heading-row h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#support-options .grid {
+  margin-top: 0;
+}
+
+@media (min-width: 801px) {
+  #support-options .grid > article {
+    padding-top: 18px;
+  }
+
+  #support-options .service-icon {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  #support-options {
+    padding-top: 24px;
+    padding-bottom: 36px;
   }
 }

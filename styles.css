@@ -4683,3 +4683,29 @@ main section#top.norlium-hero {
     padding-bottom: 40px;
   }
 }
+
+/* NORLIUM — Homepage services enquiry action */
+#services .services-contact-action {
+  margin-top: 28px;
+  text-align: center;
+}
+
+#services .services-contact-action p {
+  max-width: 600px;
+  margin: 0 auto 18px;
+  line-height: 1.6;
+}
+
+#services .services-contact-action a.primary {
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  #services .services-contact-action {
+    margin-top: 24px;
+  }
+
+  #services .services-contact-action a.primary {
+    max-width: 100%;
+  }
+}

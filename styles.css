@@ -4544,7 +4544,7 @@ main section#top.norlium-hero {
 
 #top.norlium-hero h1 {
   max-width: 740px;
-  font-size: clamp(32px, 3.2vw, 46px);
+  font-size: clamp(30px, 2.8vw, 40px);
   line-height: 1.15;
   letter-spacing: -0.03em;
 }
@@ -4555,16 +4555,16 @@ main section#top.norlium-hero {
 }
 
 #top.norlium-hero .lead {
-  max-width: 620px;
-  font-size: 18px;
-  line-height: 1.55;
+  max-width: 600px;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 #top.norlium-hero .hero-services {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
   gap: 10px;
-  max-width: 720px;
+  max-width: 100%;
   margin: 22px 0;
 }
 
@@ -4598,6 +4598,11 @@ main section#top.norlium-hero {
 
   #top.norlium-hero .lead {
     font-size: 16px;
+  }
+
+  #top.norlium-hero .hero-services {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -4932,4 +4937,11 @@ main section.feature ~ section.split p {
     margin-top: 0;
   }
 
+}
+
+/* NORLIUM — Homepage supporting text line break */
+@media (min-width: 801px) {
+  #top.norlium-hero .hero-lead-break {
+    display: block;
+  }
 }

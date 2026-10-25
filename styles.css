@@ -5033,3 +5033,24 @@ main section#about.split > div:nth-child(2) {
 :root {
   --norlium-side-accent: #93b9ee;
 }
+
+/* Norlium — Desktop header social spacing */
+@media (min-width: 1051px) {
+  .site-header {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .site-header #main-navigation {
+    margin-left: auto;
+  }
+
+  .site-header .header-shop {
+    margin-left: 0;
+  }
+
+  .site-header .header-social {
+    margin-left: 0;
+    gap: 8px;
+  }
+}

@@ -79,6 +79,18 @@ if (enquiryForm && formMessage) {
   }
 
   serviceSelect.addEventListener('change', updateDeviceFields);
+
+  // Preselect device advice for visitors arriving from the online shop.
+  const enquiryParams = new URLSearchParams(window.location.search);
+  const requestedService = enquiryParams.get('service');
+
+  if (
+    requestedService === 'device-sourcing' &&
+    window.location.hash === '#enquiry-form'
+  ) {
+    serviceSelect.value = 'device-sourcing';
+  }
+
   updateDeviceFields();
 
   function updateTelephoneRequirement() {

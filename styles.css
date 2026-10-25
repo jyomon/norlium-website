@@ -413,7 +413,7 @@ form {
   margin: 1.5rem 0;
   padding: 1.25rem 1.4rem;
   border: 1px solid #cbd5e1;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 8px;
   background: #f8fafc;
 }
@@ -1460,7 +1460,7 @@ main section.norlium-hero {
 /* Phase 2: Problem-based support categories */
 
 #help-topics {
-  padding: 48px 24px 64px;
+  padding: 36px 24px 44px;
   background: #f7faff;
 }
 
@@ -1482,7 +1482,7 @@ main section.norlium-hero {
 
 .help-topics-intro {
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   color: #52647a;
   line-height: 1.6;
 }
@@ -1564,7 +1564,7 @@ main section.norlium-hero {
 /* Mobile */
 @media (max-width: 600px) {
   #help-topics {
-    padding: 36px 18px 48px;
+    padding: 28px 18px 36px;
   }
 
   .help-topics-grid {
@@ -1690,7 +1690,7 @@ main section.norlium-hero {
 .trust > div {
   background: #f7f9fc;
   border: 1px solid #cbd7e6;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 8px;
   padding: 24px;
   box-sizing: border-box;
@@ -1717,7 +1717,7 @@ main section.norlium-hero {
 #services .grid > article {
   background: #f7f9fc;
   border: 1px solid #cbd7e6;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 8px;
   padding: 24px;
   box-sizing: border-box;
@@ -1778,7 +1778,7 @@ main section.norlium-hero {
 #about.split > div:nth-child(2) {
   background: #f7f9fc;
   border: 1px solid #cbd7e6;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 8px;
   padding: 28px;
   box-sizing: border-box;
@@ -1829,7 +1829,7 @@ main section.norlium-hero {
 .process-card {
   background: #f7f9fc;
   border: 1px solid #cbd7e6;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 8px;
   padding: 24px;
   box-sizing: border-box;
@@ -1935,7 +1935,7 @@ footer {
 .advice-card {
   background: #f7f9fc;
   border: 1px solid #cbd7e6;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 8px;
   padding: 24px;
   box-sizing: border-box;
@@ -2060,7 +2060,7 @@ footer {
 .advice-article .article-support {
   background: #f7f9fc;
   border: 1px solid #cbd7e6;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 8px;
   padding: 28px;
   margin-top: 52px;
@@ -2749,7 +2749,7 @@ button.enquiry-submit:focus-visible {
 
 #service-list .grid > article {
   border: 1px solid #d7e2ef;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -3150,7 +3150,7 @@ main .split a.digital-assistance-cta:focus-visible {
 #service-delivery .delivery-card {
   background: #f7f9fc;
   border: 1px solid #cbd7e6;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 8px;
   padding: 22px 24px;
   min-height: 0;
@@ -3281,7 +3281,7 @@ main .split a.digital-assistance-cta:focus-visible {
 
 #services .grid > article {
   border: 1px solid #cbd7e6;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid var(--norlium-side-accent);
   border-radius: 10px;
   background: #f7f9fc;
   overflow: hidden;
@@ -4924,7 +4924,7 @@ main section.feature ~ section.split p {
   main section#digital-assistance.split > div:nth-child(2),
   main section#about.split > div:nth-child(2) {
     align-self: start;
-    margin-top: 175px;
+    margin-top: 0;
   }
 
 }
@@ -4962,4 +4962,74 @@ main section.feature ~ section.split p {
 
 #support-options .grid > article > a.secondary {
   margin-top: auto;
+}
+
+/* NORLIUM — Digital Assistance and About section headings */
+main section#digital-assistance.split h2,
+main section#about.split h2 {
+  font-size: clamp(24px, 2.2vw, 28px);
+  line-height: 1.3;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  main section#digital-assistance.split h2,
+  main section#about.split h2 {
+    font-size: 24px;
+    margin-top: 14px;
+  }
+}
+
+/* NORLIUM — Unified homepage Digital Assistance and About cards */
+
+main section#digital-assistance.split,
+main section#about.split {
+  width: calc(100% - 48px);
+  max-width: 1320px;
+  margin: 24px auto;
+  padding: 28px;
+  min-height: 0;
+  background: #ffffff;
+  border: 1px solid #dce5f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(16, 35, 63, 0.045);
+  box-sizing: border-box;
+  column-gap: 28px;
+  row-gap: 20px;
+  align-items: start;
+}
+
+main section#digital-assistance.split > div,
+main section#about.split > div {
+  min-width: 0;
+}
+
+main section#digital-assistance.split .section-illustration,
+main section#about.split .section-illustration {
+  margin-top: 0;
+}
+
+main section#digital-assistance.split > div:nth-child(2),
+main section#about.split > div:nth-child(2) {
+  margin-top: 0;
+  align-self: start;
+}
+
+@media (max-width: 800px) {
+  main section#digital-assistance.split,
+  main section#about.split {
+    width: calc(100% - 32px);
+    grid-template-columns: minmax(0, 1fr);
+    padding: 20px;
+    margin: 16px auto;
+    gap: 20px;
+    border-radius: 12px;
+  }
+}
+
+
+/* NORLIUM — Shared decorative side accent */
+:root {
+  --norlium-side-accent: #93b9ee;
 }

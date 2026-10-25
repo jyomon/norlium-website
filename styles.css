@@ -5054,3 +5054,29 @@ main section#about.split > div:nth-child(2) {
     gap: 8px;
   }
 }
+
+/* NORLIUM — Homepage Business IT CTA contrast */
+main section#business a.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  background: #0869d5;
+  border: 1px solid #0869d5;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main section#business a.secondary:hover {
+  background: #0755ac;
+  border-color: #0755ac;
+  color: #ffffff;
+}
+
+main section#business a.secondary:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}

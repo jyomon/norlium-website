@@ -150,8 +150,9 @@ textarea:focus-visible {
   height: 44px;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: 1px solid transparent;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
   color: var(--ink);
   font-size: 24px;
   cursor: pointer;
@@ -3206,13 +3207,7 @@ main .split a.digital-assistance-cta:focus-visible {
 /* Norlium — Contact form anchor navigation */
 
 #enquiry-form {
-  scroll-margin-top: 100px;
-}
-
-@media (max-width: 600px) {
-  #enquiry-form {
-    scroll-margin-top: 85px;
-  }
+  scroll-margin-top: 0;
 }
 
 
@@ -4332,16 +4327,7 @@ main section#business-services {
     border-radius: 10px;
   }
 }
-/* NORLIUM — About section image alignment */
 
-@media (min-width: 801px) {
-  #about .section-illustration {
-    height: 360px;
-    aspect-ratio: auto;
-    object-fit: cover;
-    object-position: center;
-  }
-}
 
 /* NORLIUM — Consolidated Homepage Pricing */
 
@@ -4512,7 +4498,7 @@ main section#support-areas .grid > article {
   padding: 26px;
   background: #ffffff;
   border: 1px solid #dce8f7;
-  border-top: 4px solid #0878d1;
+  border-top: 4px solid #4A9BE8;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(16, 35, 63, 0.04);
 }
@@ -4809,4 +4795,141 @@ main section#linux.feature {
 
 #linux .reuse-step p {
   color: #475569;
+}
+
+/* NORLIUM — Unified light-blue website theme */
+
+:root {
+  --paper: #f7faff;
+  --section-card: #edf5ff;
+  --section-card-border: #c8ddf5;
+}
+
+/* Consistent page background */
+body {
+  background: var(--paper);
+}
+
+/* Feature and pricing sections as inset cards */
+main section.feature,
+main section.pricing {
+  width: calc(100% - 48px);
+  max-width: 1268px;
+  margin: 28px auto;
+  padding: 48px;
+  background: var(--section-card);
+  color: #10233f;
+  border: 1px solid var(--section-card-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(16, 35, 63, 0.05);
+}
+
+/* Readable typography on light cards */
+main section.feature h2,
+main section.pricing h2 {
+  color: #10233f;
+}
+
+main section.feature p,
+main section.pricing p,
+main section.pricing strong {
+  color: #334b68;
+}
+
+main section.feature .eyebrow,
+main section.pricing .eyebrow {
+  color: #2869ae;
+}
+
+/* Mobile card dimensions */
+@media (max-width: 800px) {
+  main section.feature,
+  main section.pricing {
+    width: calc(100% - 32px);
+    margin: 20px auto;
+    padding: 28px 20px;
+    border-radius: 12px;
+  }
+}
+
+/* Preserve Older Computer Reuse section styling */
+main section#linux.feature {
+  background:
+    radial-gradient(
+      ellipse at 90% 5%,
+      rgba(219, 236, 255, 0.75),
+      transparent 48%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+}
+
+/* NORLIUM — Digital Assistance information cards */
+
+/* Three information sections following YOU REMAIN IN CONTROL */
+body:has(main section#support-areas)
+main section.feature + section.split,
+body:has(main section#support-areas)
+main section.feature + section.split + section.split,
+body:has(main section#support-areas)
+main section.feature + section.split + section.split + section.split {
+  width: calc(100% - 48px);
+  max-width: 1268px;
+  margin: 28px auto;
+  padding: 48px;
+  background: var(--section-card);
+  border: 1px solid var(--section-card-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(16, 35, 63, 0.05);
+  color: #10233f;
+  gap: clamp(32px, 5vw, 80px);
+}
+
+/* Consistent heading and text colours */
+body:has(main section#support-areas)
+main section.feature ~ section.split h2 {
+  color: #10233f;
+}
+
+body:has(main section#support-areas)
+main section.feature ~ section.split p {
+  color: #334b68;
+}
+
+/* Mobile card layout */
+@media (max-width: 800px) {
+  body:has(main section#support-areas)
+  main section.feature + section.split,
+  body:has(main section#support-areas)
+  main section.feature + section.split + section.split,
+  body:has(main section#support-areas)
+  main section.feature + section.split + section.split + section.split {
+    width: calc(100% - 32px);
+    margin: 20px auto;
+    padding: 28px 20px;
+    border-radius: 12px;
+    gap: 20px;
+  }
+}
+
+/* NORLIUM — Homepage image and information card alignment */
+
+@media (min-width: 801px) {
+
+  /* Align information cards with the images */
+  main section#digital-assistance.split > div:nth-child(2),
+  main section#about.split > div:nth-child(2) {
+    align-self: start;
+    margin-top: 175px;
+  }
+
+}
+
+/* Keep mobile layout naturally stacked */
+@media (max-width: 800px) {
+
+  main section#digital-assistance.split > div:nth-child(2),
+  main section#about.split > div:nth-child(2) {
+    margin-top: 0;
+  }
+
 }

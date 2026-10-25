@@ -1013,6 +1013,7 @@
           <option value="digital">Digital assistance</option>
           <option value="website">Website or digital services</option>
           <option value="linux">Revive an older computer</option>
+          <option value="device-sourcing">Device purchase &amp; sourcing advice</option>
           <option value="other">Other / Not sure</option>
         </select>
 
@@ -1027,6 +1028,35 @@
             tabindex="-1"
             autocomplete="off"
           >
+        </div>
+
+        <div id="device-enquiry-fields" hidden>
+          <label for="device-type">Device type</label>
+          <select id="device-type" name="device-type">
+            <option value="">Select a device</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Desktop computer">Desktop computer</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Networking equipment">Networking equipment</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="device-use">What will you use it for?</label>
+          <textarea id="device-use" name="device-use" rows="3"
+            maxlength="500"
+            placeholder="For example: university study, office work, home use or business"></textarea>
+
+          <label for="device-condition">Preferred condition</label>
+          <select id="device-condition" name="device-condition">
+            <option value="">Select a preference</option>
+            <option value="Brand new">Brand new</option>
+            <option value="Refurbished">Refurbished</option>
+            <option value="Either">Either / Please advise</option>
+          </select>
+
+          <label for="device-budget">Approximate budget (£)</label>
+          <input id="device-budget" name="device-budget" type="text"
+            maxlength="60" placeholder="For example: £300–£500">
         </div>
 
         <label for="message">

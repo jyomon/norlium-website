@@ -93,6 +93,7 @@ export async function onRequestPost(context) {
       'digital',
       'website',
       'linux',
+      'device-sourcing',
       'other'
     ];
 

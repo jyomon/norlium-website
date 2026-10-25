@@ -65,6 +65,21 @@ const formMessage = document.querySelector('#form-message');
 if (enquiryForm && formMessage) {
   const preferredContactSelect = enquiryForm.querySelector('#preferred-contact');
   const telephoneInput = enquiryForm.querySelector('#telephone');
+  const serviceSelect = enquiryForm.querySelector('#service-type');
+  const deviceFields = enquiryForm.querySelector('#device-enquiry-fields');
+
+  function updateDeviceFields() {
+    const active = serviceSelect.value === 'device-sourcing';
+    deviceFields.hidden = !active;
+
+    for (const field of deviceFields.querySelectorAll('input, select, textarea')) {
+      field.required = active && field.id !== 'device-budget';
+      field.disabled = !active;
+    }
+  }
+
+  serviceSelect.addEventListener('change', updateDeviceFields);
+  updateDeviceFields();
 
   function updateTelephoneRequirement() {
     const needsTelephone =
@@ -77,6 +92,7 @@ if (enquiryForm && formMessage) {
   preferredContactSelect.addEventListener('change', updateTelephoneRequirement);
   enquiryForm.addEventListener('reset', () => {
     telephoneInput.required = false;
+    requestAnimationFrame(updateDeviceFields);
   });
   updateTelephoneRequirement();
 
@@ -103,7 +119,32 @@ if (enquiryForm && formMessage) {
       '#preferred-contact'
     ).value;
     const service = enquiryForm.querySelector('#service-type').value;
-    const message = enquiryForm.querySelector('#message').value.trim();
+    let message = enquiryForm.querySelector('#message').value.trim();
+
+    if (service === 'device-sourcing') {
+      const deviceType = enquiryForm.querySelector('#device-type').value;
+      const deviceUse = enquiryForm.querySelector('#device-use').value.trim();
+      const condition = enquiryForm.querySelector('#device-condition').value;
+      const budget = enquiryForm.querySelector('#device-budget').value.trim();
+
+      message = [
+        'PERSONALISED DEVICE SOURCING ENQUIRY',
+        'Device: ' + deviceType,
+        'Intended use: ' + deviceUse,
+        'Condition: ' + condition,
+        'Budget: ' + (budget || 'Not specified'),
+        '',
+        'Additional information:',
+        message
+      ].join('\n');
+
+      if (message.length > 2000) {
+        formMessage.hidden = false;
+        formMessage.textContent =
+          'Please shorten your device requirements or additional information.';
+        return;
+      }
+    }
 
     const websiteAddress = enquiryForm
       .querySelector('#website-address')

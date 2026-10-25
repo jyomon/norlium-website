@@ -4709,3 +4709,63 @@ main section#top.norlium-hero {
     max-width: 100%;
   }
 }
+
+/* NORLIUM — Compact About page information cards */
+main section.about-card-section {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+.about-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.about-info-card {
+  background: #ffffff;
+  border: 1px solid #dce5f0;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 4px 18px rgba(10, 35, 70, 0.045);
+}
+
+.about-info-card .eyebrow {
+  margin: 0 0 12px;
+}
+
+.about-info-card h2 {
+  font-size: clamp(22px, 2vw, 26px);
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+.about-info-card p {
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+.about-info-card p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+  main section.about-card-section {
+    padding-top: 18px;
+    padding-bottom: 24px;
+  }
+
+  .about-card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-info-card {
+    padding: 22px;
+  }
+
+  .about-info-card h2 {
+    font-size: 22px;
+  }
+}

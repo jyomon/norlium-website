@@ -4769,3 +4769,44 @@ main section.about-card-section {
     font-size: 22px;
   }
 }
+
+
+/* NORLIUM — Older Computer Reuse light theme */
+main section#linux.feature {
+  background:
+    radial-gradient(
+      ellipse at 90% 5%,
+      rgba(219, 236, 255, 0.75),
+      transparent 48%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  color: #334155;
+}
+
+#linux .eyebrow {
+  color: #0869d5;
+}
+
+#linux h2,
+#linux .rule {
+  color: #102443;
+}
+
+#linux > div > p:not(.eyebrow):not(.rule) {
+  color: #334155;
+}
+
+#linux .reuse-step {
+  background: #ffffff;
+  border: 1px solid #dce5f0;
+  border-top: 3px solid #2563eb;
+  box-shadow: 0 4px 18px rgba(10, 35, 70, 0.045);
+}
+
+#linux .reuse-step h3 {
+  color: #102443;
+}
+
+#linux .reuse-step p {
+  color: #475569;
+}

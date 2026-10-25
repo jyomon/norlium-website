@@ -15,10 +15,46 @@ if (menuButton && navigation) {
   });
 
   document.querySelectorAll('#main-navigation a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', event => {
+      const href = link.getAttribute('href');
+
       navigation.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
       menuButton.setAttribute('aria-label', 'Open navigation menu');
+
+      // Preserve normal browser navigation on desktop
+      // and for links to other pages.
+      if (
+        !window.matchMedia('(max-width: 800px)').matches ||
+        !href ||
+        !href.startsWith('#')
+      ) return;
+
+      const target = document.getElementById(href.slice(1));
+      if (!target) return;
+
+      event.preventDefault();
+
+      const header = document.querySelector('.site-header');
+      const headerHeight = header
+        ? header.getBoundingClientRect().height
+        : 0;
+
+      // Calculate the destination after the menu has closed.
+      requestAnimationFrame(() => {
+        const targetTop =
+          window.scrollY +
+          target.getBoundingClientRect().top -
+          headerHeight -
+          12;
+
+        window.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior: 'instant'
+        });
+
+        history.replaceState(null, '', href);
+      });
     });
   });
 }

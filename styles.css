@@ -5114,3 +5114,26 @@ main section#business a.secondary:focus-visible {
     padding-bottom: 28px;
   }
 }
+
+/* NORLIUM — Consistent section text alignment */
+
+/* Align feature and pricing content with section headings */
+main section.feature > *,
+main section.pricing > * {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Align Digital Assistance introduction with its heading */
+main section#support-areas > .section-intro {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+/* NORLIUM — Align Business IT introduction with heading */
+main section#business-services > .section-intro {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}

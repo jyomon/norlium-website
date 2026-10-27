@@ -1169,7 +1169,7 @@ main section.norlium-hero {
       rgba(240, 247, 255, 0.68) 48%,
       rgba(240, 247, 255, 0.04) 72%
     ),
-    url("/assets/images/homepage-services-workspace.png");
+    url("/assets/images/homepage-services-workspace.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1216,13 +1216,8 @@ main section.norlium-hero {
   main section.norlium-hero {
     min-height: 480px;
     padding: 50px 24px;
-    background-image:
-      linear-gradient(
-        rgba(240, 247, 255, 0.94),
-        rgba(240, 247, 255, 0.82)
-      ),
-      url("/assets/images/homepage-services-workspace.png");
-    background-position: center;
+    background-image: none;
+    background-color: #f0f7ff;
   }
 
   .norlium-hero h1 {

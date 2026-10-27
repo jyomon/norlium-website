@@ -94,6 +94,7 @@ export async function onRequestPost(context) {
       'website',
       'linux',
       'device-sourcing',
+      'cybersecurity',
       'other'
     ];
 

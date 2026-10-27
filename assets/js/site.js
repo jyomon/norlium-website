@@ -85,10 +85,10 @@ if (enquiryForm && formMessage) {
   const requestedService = enquiryParams.get('service');
 
   if (
-    requestedService === 'device-sourcing' &&
+    ['device-sourcing', 'cybersecurity'].includes(requestedService) &&
     window.location.hash === '#enquiry-form'
   ) {
-    serviceSelect.value = 'device-sourcing';
+    serviceSelect.value = requestedService;
   }
 
   updateDeviceFields();

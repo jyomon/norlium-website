@@ -61,13 +61,16 @@ if (enquiryForm && formMessage) {
 
   serviceSelect.addEventListener('change', updateDeviceFields);
 
-  // Preselect device advice for visitors arriving from the online shop.
+  // Preselect a valid service when provided in an enquiry link.
   const enquiryParams = new URLSearchParams(window.location.search);
   const requestedService = enquiryParams.get('service');
 
   if (
-    ['device-sourcing', 'cybersecurity'].includes(requestedService) &&
-    window.location.hash === '#enquiry-form'
+    window.location.hash === '#enquiry-form' &&
+    Array.from(serviceSelect.options).some(
+      option => option.value === requestedService &&
+        !option.disabled
+    )
   ) {
     serviceSelect.value = requestedService;
   }

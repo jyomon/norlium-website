@@ -209,11 +209,14 @@ if (enquiryForm && formMessage) {
         })
       });
 
-      const result = await response.json();
+      const result = await response.json().catch(() => null);
 
-      if (!response.ok || !result.success) {
+      if (!response.ok || !result?.success) {
         throw new Error(
-          result.message || 'Unable to send your enquiry.'
+          typeof result?.message === 'string' && result.message.trim()
+            ? result.message
+            : 'We could not confirm your enquiry was received. ' +
+              'Please try again later or contact us by email.'
         );
       }
 

@@ -4568,7 +4568,7 @@ main section#top.norlium-hero {
   margin: 22px 0;
 }
 
-#top.norlium-hero .hero-services span {
+#top.norlium-hero .hero-services a {
   padding: 9px 12px;
   border: 1px solid #d6e6fa;
   border-radius: 10px;
@@ -4615,7 +4615,7 @@ main section#top.norlium-hero {
     gap: 8px;
   }
 
-  #top.norlium-hero .hero-services span {
+  #top.norlium-hero .hero-services a {
     font-size: 12px;
   }
 
@@ -5078,5 +5078,23 @@ main section#business a.secondary:hover {
 
 main section#business a.secondary:focus-visible {
   outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+
+/* Homepage hero service navigation */
+#top.norlium-hero .hero-services a {
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#top.norlium-hero .hero-services a:hover {
+  background: #eaf3ff;
+  border-color: #0074e8;
+}
+
+#top.norlium-hero .hero-services a:focus-visible {
+  outline: 3px solid #0074e8;
   outline-offset: 3px;
 }

@@ -143,6 +143,101 @@
       padding-bottom: 20px;
     }
   }
+
+  /* Cybersecurity layout refinement — October 2026 */
+
+  /* Remove inherited grid border and improve card presentation */
+  .cybersecurity-page .cyber-service-grid {
+    border: 0;
+    padding-top: 0;
+    margin-top: 24px;
+    gap: 20px;
+  }
+
+  .cybersecurity-page .cyber-service-grid > article {
+    border: 1px solid #dce5f0;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(12, 35, 68, 0.045);
+  }
+
+  /* Compact service boundaries information card */
+  .cybersecurity-page .cyber-boundaries {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 32px;
+    padding: 30px 34px;
+    margin: 24px 0;
+    background: #ffffff;
+    border: 1px solid #dce5f0;
+    border-radius: 16px;
+    align-items: start;
+  }
+
+  .cybersecurity-page .cyber-boundaries h2 {
+    margin: 8px 0 0;
+    line-height: 1.2;
+  }
+
+  .cybersecurity-page .cyber-boundaries p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Final enquiry section */
+  .cybersecurity-page .cyber-boundaries + section.split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 32px;
+    padding: 30px 34px;
+    margin: 20px 0 32px;
+    background: #eaf3ff;
+    border: 1px solid #c7def9;
+    border-radius: 16px;
+    align-items: center;
+  }
+
+  .cybersecurity-page .cyber-boundaries + section.split h2 {
+    margin: 8px 0 0;
+    line-height: 1.2;
+  }
+
+  .cybersecurity-page .cyber-boundaries + section.split p {
+    margin-top: 0;
+  }
+
+  @media (max-width: 760px) {
+    .cybersecurity-page .cyber-boundaries,
+    .cybersecurity-page .cyber-boundaries + section.split {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 24px 20px;
+    }
+
+    .cybersecurity-page .cyber-service-grid {
+      gap: 16px;
+    }
+  }
+
+  /* Cybersecurity introduction alignment */
+  @media (min-width: 1100px) {
+    .cybersecurity-page #cybersecurity-services > p {
+      max-width: none;
+      width: 100%;
+      white-space: nowrap;
+      text-align: left;
+    }
+  }
+
+  /* Cybersecurity introduction: single-line desktop */
+  @media (min-width: 1100px) {
+    .cybersecurity-page #cybersecurity-services .section-intro {
+      width: 100%;
+      max-width: none;
+      white-space: nowrap;
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 </style>
 
 </head>

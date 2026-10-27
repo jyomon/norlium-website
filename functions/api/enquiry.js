@@ -124,6 +124,19 @@ export async function onRequestPost(context) {
       );
     }
 
+    if (
+      (preferredContact === 'Telephone' || preferredContact === 'WhatsApp') &&
+      !telephone
+    ) {
+      return jsonResponse(
+        {
+          success: false,
+          message: 'Please provide a telephone number for your selected contact method.'
+        },
+        400
+      );
+    }
+
     const formsparkResponse = await fetch(
       'https://submit-form.com/4Adim92PZ',
       {

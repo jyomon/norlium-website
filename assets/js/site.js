@@ -99,12 +99,24 @@ if (enquiryForm && formMessage) {
       preferredContactSelect.value === 'WhatsApp';
 
     telephoneInput.required = needsTelephone;
+
+    const telephoneLabel = enquiryForm.querySelector(
+      'label[for="telephone"] span'
+    );
+
+    if (telephoneLabel) {
+      telephoneLabel.textContent = needsTelephone
+        ? '(required)'
+        : '(optional)';
+    }
   }
 
   preferredContactSelect.addEventListener('change', updateTelephoneRequirement);
   enquiryForm.addEventListener('reset', () => {
-    telephoneInput.required = false;
-    requestAnimationFrame(updateDeviceFields);
+    requestAnimationFrame(() => {
+      updateTelephoneRequirement();
+      updateDeviceFields();
+    });
   });
   updateTelephoneRequirement();
 

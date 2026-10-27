@@ -22,7 +22,67 @@ export async function onRequestPost(context) {
       );
     }
 
-    const data = await request.json();
+    const maxBodyBytes = 16 * 1024;
+    const reader = request.body?.getReader();
+
+    if (!reader) {
+      return jsonResponse(
+        { success: false, message: 'Invalid request body.' },
+        400
+      );
+    }
+
+    const chunks = [];
+    let totalBytes = 0;
+
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        totalBytes += value.byteLength;
+
+        if (totalBytes > maxBodyBytes) {
+          await reader.cancel();
+          return jsonResponse(
+            { success: false, message: 'Enquiry is too large.' },
+            413
+          );
+        }
+
+        chunks.push(value);
+      }
+    } finally {
+      reader.releaseLock();
+    }
+
+    const body = new Uint8Array(totalBytes);
+    let offset = 0;
+
+    for (const chunk of chunks) {
+      body.set(chunk, offset);
+      offset += chunk.byteLength;
+    }
+
+    let data;
+
+    try {
+      data = JSON.parse(new TextDecoder('utf-8', {
+        fatal: true
+      }).decode(body));
+    } catch {
+      return jsonResponse(
+        { success: false, message: 'Invalid JSON request.' },
+        400
+      );
+    }
+
+    if (!data || typeof data !== 'object' || Array.isArray(data)) {
+      return jsonResponse(
+        { success: false, message: 'Invalid enquiry data.' },
+        400
+      );
+    }
 
     const name = cleanText(data.name, 100);
     const email = cleanText(data.email, 254);
@@ -32,6 +92,29 @@ export async function onRequestPost(context) {
     const service = cleanText(data.service, 100);
     const message = cleanText(data.message, 2000);
     const websiteAddress = cleanText(data.websiteAddress, 200);
+
+    const fieldLimits = {
+      name: 100,
+      email: 254,
+      company: 150,
+      telephone: 50,
+      preferredContact: 20,
+      service: 100,
+      message: 2000
+    };
+
+    for (const [field, limit] of Object.entries(fieldLimits)) {
+      if (typeof data[field] === 'string' &&
+          data[field].trim().length > limit) {
+        return jsonResponse(
+          {
+            success: false,
+            message: 'One or more fields exceed the permitted length.'
+          },
+          400
+        );
+      }
+    }
 
     const informationConfirmed = data.informationConfirmed === true;
     const privacyConfirmed = data.privacyConfirmed === true;

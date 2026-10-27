@@ -1108,7 +1108,7 @@ footer p:last-child {
 
 .site-header {
   background: rgba(255, 255, 255, 0.97);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--accent);
 }
 
 #main-navigation a:hover {
@@ -5033,11 +5033,11 @@ main section#about.split > div:nth-child(2) {
 @media (min-width: 1051px) {
   .site-header {
     justify-content: flex-start;
-    gap: 20px;
+    gap: 14px;
   }
 
   .site-header #main-navigation {
-    margin-left: auto;
+    margin-left: 0;
   }
 
   .site-header .header-shop {

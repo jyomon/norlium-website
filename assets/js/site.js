@@ -166,6 +166,7 @@ if (enquiryForm && formMessage) {
         formMessage.hidden = false;
         formMessage.textContent =
           'Please shorten your device requirements or additional information.';
+        formMessage.focus();
         return;
       }
     }

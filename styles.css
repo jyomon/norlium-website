@@ -5098,3 +5098,24 @@ main section#business a.secondary:focus-visible {
   outline: 3px solid #0074e8;
   outline-offset: 3px;
 }
+
+/* NORLIUM — Homepage mobile spacing refinement */
+@media (max-width: 600px) {
+  body:has(#top.norlium-hero) main section#help-topics,
+  body:has(#top.norlium-hero) main section#services,
+  body:has(#top.norlium-hero) main section#how-it-works {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  body:has(#top.norlium-hero) main section.feature,
+  body:has(#top.norlium-hero) main section.pricing {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  body:has(#top.norlium-hero) main section.trust {
+    padding-top: 24px;
+    padding-bottom: 28px;
+  }
+}

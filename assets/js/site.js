@@ -33,28 +33,9 @@ if (menuButton && navigation) {
       const target = document.getElementById(href.slice(1));
       if (!target) return;
 
-      event.preventDefault();
+      // Let native anchor navigation use CSS scroll-padding-top.
+      // The mobile menu has already been closed above.
 
-      const header = document.querySelector('.site-header');
-      const headerHeight = header
-        ? header.getBoundingClientRect().height
-        : 0;
-
-      // Calculate the destination after the menu has closed.
-      requestAnimationFrame(() => {
-        const targetTop =
-          window.scrollY +
-          target.getBoundingClientRect().top -
-          headerHeight -
-          12;
-
-        window.scrollTo({
-          top: Math.max(0, targetTop),
-          behavior: 'instant'
-        });
-
-        history.replaceState(null, '', href);
-      });
     });
   });
 }

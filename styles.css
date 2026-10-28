@@ -5142,3 +5142,12 @@ main section#business-services > .section-intro {
 #contact {
   scroll-margin-top: 0;
 }
+
+/* Homepage hero: natural height on small screens */
+@media (max-width: 600px) {
+  main section#top.norlium-hero {
+    min-height: 0;
+    padding-top: 32px;
+    padding-bottom: 36px;
+  }
+}

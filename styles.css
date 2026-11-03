@@ -1318,11 +1318,6 @@ main section.norlium-hero {
 
 /* Norlium homepage — service section refinement */
 
-#support-options {
-  padding-top: 24px;
-  padding-bottom: 48px;
-}
-
 #support-options > .eyebrow {
   margin-top: 0;
   margin-bottom: 8px;
@@ -2859,7 +2854,7 @@ main section.service-hero {
    ========================================== */
 
 #linux {
-  scroll-margin-top: 0;
+  scroll-margin-top: -8px;
 }
 
 #linux .eyebrow {
@@ -4544,33 +4539,10 @@ main section#top.norlium-hero {
   letter-spacing: -0.03em;
 }
 
-#top.norlium-hero h1 span {
-  display: block;
-  color: #0869d5;
-}
-
 #top.norlium-hero .lead {
   max-width: 600px;
   font-size: 17px;
   line-height: 1.5;
-}
-
-#top.norlium-hero .hero-services {
-  display: grid;
-  grid-template-columns: repeat(3, max-content);
-  gap: 10px;
-  max-width: 100%;
-  margin: 22px 0;
-}
-
-#top.norlium-hero .hero-services a {
-  padding: 9px 12px;
-  border: 1px solid #d6e6fa;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #12345c;
-  font-size: 13px;
-  font-weight: 600;
 }
 
 #top.norlium-hero .actions {
@@ -4595,23 +4567,11 @@ main section#top.norlium-hero {
     font-size: 16px;
   }
 
-  #top.norlium-hero .hero-services {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 
 @media (max-width: 480px) {
   #top.norlium-hero h1 {
     font-size: 30px;
-  }
-
-  #top.norlium-hero .hero-services {
-    gap: 8px;
-  }
-
-  #top.norlium-hero .hero-services a {
-    font-size: 12px;
   }
 
   #top.norlium-hero .actions a {
@@ -4934,13 +4894,6 @@ main section.feature ~ section.split p {
 
 }
 
-/* NORLIUM — Homepage supporting text line break */
-@media (min-width: 801px) {
-  #top.norlium-hero .hero-lead-break {
-    display: block;
-  }
-}
-
 /* NORLIUM — Homepage support card alignment */
 #support-options .grid > article {
   display: flex;
@@ -5077,23 +5030,6 @@ main section#business a.secondary:focus-visible {
 }
 
 
-/* Homepage hero service navigation */
-#top.norlium-hero .hero-services a {
-  display: block;
-  text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-#top.norlium-hero .hero-services a:hover {
-  background: #eaf3ff;
-  border-color: #0074e8;
-}
-
-#top.norlium-hero .hero-services a:focus-visible {
-  outline: 3px solid #0074e8;
-  outline-offset: 3px;
-}
-
 /* NORLIUM — Homepage mobile spacing refinement */
 @media (max-width: 600px) {
   body:has(#top.norlium-hero) main section#help-topics,
@@ -5140,7 +5076,7 @@ main section#business-services > .section-intro {
 
 /* Contact section navigation */
 #contact {
-  scroll-margin-top: 0;
+  scroll-margin-top: -8px;
 }
 
 /* Homepage hero: natural height on small screens */
@@ -5149,5 +5085,11 @@ main section#business-services > .section-intro {
     min-height: 0;
     padding-top: 32px;
     padding-bottom: 36px;
+  }
+}
+@media (min-width: 801px) {
+  main section#top.norlium-hero .hero-content > h1 {
+    position: relative;
+    top: -40px;
   }
 }

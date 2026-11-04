@@ -5093,3 +5093,98 @@ main section#business-services > .section-intro {
     top: -40px;
   }
 }
+
+/* Compact service cards inside the homepage hero */
+#top.norlium-hero .hero-content > h1 {
+  margin-bottom: 8px;
+}
+
+#top.norlium-hero #support-options {
+  max-width: 540px;
+  margin-inline: clamp(-24px, calc(800px - 100vw), 0px) 0;
+  padding: 0;
+  background: transparent;
+}
+
+#top.norlium-hero #support-options .support-heading-row {
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-bottom: 10px;
+}
+
+#top.norlium-hero #support-options h2 {
+  font-size: 20px;
+}
+
+#top.norlium-hero #support-options .grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+#top.norlium-hero #support-options .grid > article {
+  min-height: 0;
+  padding: 10px 8px;
+  border: 0;
+  background: transparent;
+}
+
+#top.norlium-hero #support-options .service-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+}
+
+#top.norlium-hero #support-options .service-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+#top.norlium-hero #support-options .grid > article h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+#top.norlium-hero #support-options .grid > article a.secondary {
+  font-size: 13px;
+}
+
+#top.norlium-hero .actions svg {
+  vertical-align: -3px;
+}
+cd ~/projects/norlium-website &&
+cat >> styles.css <<'CSS'
+
+/* Homepage shop reasons spacing */
+main > section#why-shop {
+  padding-top: 20px;
+  padding-bottom: 64px;
+}
+
+main > section#why-shop > h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+main > section#why-shop > ul {
+  margin-top: 0;
+}
+CSS
+git --no-pager diff --check
+
+/* Shop supplier line and device advice link */
+#why-shop .shop-supplier-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 40px;
+}
+
+#why-shop .shop-supplier-line > a {
+  margin-inline-start: auto;
+}
+
+/* Tighten the hero options right column */
+#top.norlium-hero #support-options .grid > article:nth-child(even) {
+  position: relative;
+  left: clamp(-48px, calc(600px - 100vw), 0px);
+}

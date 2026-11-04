@@ -5544,3 +5544,11 @@ main > section#why-shop > ul.shop-reasons {
 main section#top.norlium-hero .hero-content > h1 {
   margin-inline-start: clamp(-24px, calc(800px - 100vw), 0px);
 }
+
+#contact .contact-language {
+  margin-top: 56px;
+}
+
+#contact .contact-language {
+  margin-top: 224px;
+}

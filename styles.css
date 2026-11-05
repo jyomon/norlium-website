@@ -396,10 +396,24 @@ article p {
 }
 
 .contact > #enquiry-form {
+  position: relative;
   grid-column: 1 / -1;
+  padding-block-start: calc(3rem + 2px);
   width: 100%;
   max-width: min(44rem, var(--content-width));
   min-width: 0;
+}
+
+.contact > #enquiry-form::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: #0869d5;
+  /* Extend the divider across the viewport without widening the form. */
+  box-shadow: 0 0 0 100vmax #0869d5;
+  clip-path: inset(0 -100vmax);
+  pointer-events: none;
 }
 
 .contact-methods {
@@ -2681,7 +2695,7 @@ button.enquiry-submit:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin: 28px 0 40px;
+  margin: 3rem 0 4.5rem;
 }
 
 #contact .contact-actions a.primary,
@@ -2892,7 +2906,7 @@ main section.service-hero {
   line-height: 1.2;
   letter-spacing: -0.025em;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 3rem;
 }
 
 #linux .rule {
@@ -2906,7 +2920,7 @@ main section.service-hero {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 26px;
+  margin-top: 3rem;
   padding-top: 22px;
   border-top: 1px solid #d7e2ef;
 }
@@ -2949,7 +2963,7 @@ main section.service-hero {
 /* Assessment button */
 
 #linux .reuse-action {
-  margin-top: 20px;
+  margin-top: 3rem;
 }
 
 #linux .reuse-action a.primary {
@@ -2993,14 +3007,9 @@ main section.service-hero {
     margin-bottom: 18px;
   }
 
-  #linux h2 {
-    margin-bottom: 22px;
-  }
-
   #linux .reuse-process {
     grid-template-columns: 1fr;
     gap: 14px;
-    margin-top: 28px;
     padding-top: 24px;
   }
 
@@ -3326,7 +3335,6 @@ main .split a.digital-assistance-cta:focus-visible {
   }
 
   #linux .reuse-process {
-    margin-top: 22px;
     padding-top: 20px;
     gap: 14px;
   }
@@ -3343,10 +3351,6 @@ main .split a.digital-assistance-cta:focus-visible {
 
   #linux .reuse-step h3 {
     margin: 0 0 8px;
-  }
-
-  #linux .reuse-action {
-    margin-top: 20px;
   }
 }
 
@@ -5142,7 +5146,9 @@ main section#business-services > .section-intro {
   font-size: 20px;
 }
 
-#top.norlium-hero #support-options .grid {
+#top.norlium-hero #support-options .grid,
+#top.norlium-hero #support-options .support-actions {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
@@ -5188,6 +5194,28 @@ main section#business-services > .section-intro {
 #top.norlium-hero #support-options .support-card h3 {
   margin: 0;
   font-size: 16px;
+}
+
+#top.norlium-hero #support-options .support-actions {
+  align-items: center;
+  justify-items: center;
+}
+
+#top .shop-delivery {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+#top .shop-delivery svg {
+  flex-shrink: 0;
+  margin-block-start: 1px;
+  margin-inline-end: 0;
 }
 
 #top.norlium-hero .actions svg {
@@ -5336,6 +5364,20 @@ main > section#why-shop > ul.shop-reasons {
 #why-shop .shop-advice {
   justify-content: flex-end;
   text-align: right;
+}
+
+#top .shop-advice-icon,
+#why-shop .shop-advice-icon {
+  width: 18px;
+  height: 18px;
+  margin-inline-end: 4px;
+  vertical-align: -4px;
+  color: #0869d5;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* Simplified Business IT page */

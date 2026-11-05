@@ -5627,6 +5627,33 @@ main section#top.norlium-hero .hero-content > h1 {
   margin: 0;
 }
 
+#contact .contact-social {
+  margin-block-start: 1.5rem;
+}
+
+#contact .contact-social p {
+  margin: 0 0 0.5rem;
+}
+
+#contact .contact-social ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#contact .contact-social a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #0869d5;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 #contact .contact-language strong {
   display: flex;
   flex-wrap: wrap;

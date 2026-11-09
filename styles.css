@@ -119,16 +119,14 @@ textarea:focus-visible {
   align-items: center;
 }
 
-#main-navigation a,
-.footer-nav a {
+#main-navigation a {
   color: var(--ink);
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
 }
 
-#main-navigation a:hover,
-.footer-nav a:hover {
+#main-navigation a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -576,29 +574,147 @@ form button {
   overflow: hidden;
 }
 
-footer {
-  padding: 45px max(7vw, 28px);
-  border-top: 1px solid var(--ink);
+/* Site footer */
+.site-footer {
+  background: #101b2d;
+  color: #e2eaf6;
+  padding: 48px 0 28px;
+}
+
+.footer-inner {
+  width: min(var(--content-width, 1200px), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.footer-main {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 30px;
-  align-items: end;
-  font-size: 12px;
+  grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.footer-brand img {
+  display: block;
+  width: min(100%, 240px);
+  height: auto;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.footer-brand p {
+  max-width: 28ch;
+  margin: 16px 0 0;
 }
 
 .footer-nav {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 10px;
+}
+
+.footer-nav h2 {
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.site-footer a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+.footer-nav a,
+.footer-social a {
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer a:focus-visible {
+  outline-color: #93c5fd;
+}
+
+.footer-actions .footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #b9daff;
+  color: #10233f;
+  font-weight: 700;
+}
+
+.footer-bottom {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 24px;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px 32px;
+  margin-top: 36px;
+  padding-top: 22px;
+  border-top: 1px solid #485971;
+  font-size: 14px;
 }
 
-footer p:last-child {
-  text-align: right;
+.footer-bottom p {
+  margin: 0 0 8px;
 }
 
+.footer-bottom p:last-child {
+  margin-bottom: 0;
+}
 
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
 
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
+@media (max-width: 480px) {
+  .site-footer {
+    padding-top: 32px;
+  }
+
+  .footer-main {
+    gap: 24px 16px;
+  }
+
+  .footer-brand,
+  .footer-actions {
+    grid-column: 1 / -1;
+  }
+}
+/* Footer readability on narrow mobile screens */
+@media (max-width: 480px) {
+  .footer-main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .footer-brand,
+  .footer-actions {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-social {
+    gap: 12px 20px;
+  }
+}
 /* Pricing options */
 .pricing-options {
   display: grid;
@@ -859,15 +975,6 @@ footer p:last-child {
   .actions .primary,
   .actions .secondary {
     width: 100%;
-  }
-
-  footer {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-
-  footer p:last-child {
-    text-align: left;
   }
 }
 
@@ -1905,39 +2012,6 @@ main section.norlium-hero {
 
   .process-card {
     padding: 20px;
-  }
-}
-/* Phase 2: Footer legal navigation alignment */
-
-footer .legal-nav {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 14px;
-  min-width: 0;
-}
-
-footer .legal-nav a {
-  display: block;
-  width: fit-content;
-  line-height: 1.5;
-  text-align: left;
-}
-
-/* Align footer columns from the top */
-
-footer {
-  align-items: start;
-}
-
-/* Responsive legal navigation */
-
-@media (max-width: 800px) {
-  footer .legal-nav {
-    align-items: flex-start;
-    gap: 12px;
   }
 }
 /* Phase 2: IT Advice & Insights */
@@ -5106,7 +5180,7 @@ main section#business-services > .section-intro {
 
 /* Contact section navigation */
 #contact {
-  scroll-margin-top: -8px;
+  scroll-margin-top: 0;
 }
 
 /* Homepage hero: natural height on small screens */
@@ -5668,5 +5742,96 @@ main section#top.norlium-hero .hero-content > h1 {
   #contact .contact-language strong {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+/* Social media icons */
+.contact-social a,
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.footer-social .social-icon {
+  filter: invert(1);
+}
+.contact-social .social-icon {
+  filter: none;
+}
+
+.footer-social .social-icon {
+  filter: brightness(0) invert(1);
+}
+/* Mobile footer refinements */
+@media (max-width: 480px) {
+  .footer-social {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 12px;
+    width: 100%;
+  }
+
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 28px;
+    padding-top: 18px;
+  }
+}
+/* Contact section — mobile refinements */
+@media (max-width: 600px) {
+
+  /* Keep English and Arabic on separate lines */
+  #contact .contact-language strong {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  #contact .contact-language [lang="ar"] {
+    display: block;
+    direction: rtl;
+    unicode-bidi: isolate;
+    line-height: 1.6;
+  }
+
+  /* Balanced social media layout */
+  #contact .contact-social ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+  }
+
+  #contact .contact-social li {
+    min-width: 0;
+  }
+
+  #contact .contact-social a {
+    gap: 8px;
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  /* Responsive cybersecurity advice image */
+  #contact .security-notice img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }

@@ -1,3 +1,5 @@
+import { formatDeviceRequest, validateDeviceRequest } from '../../assets/js/device-request-rules.js';
+
 export async function onRequestPost(context) {
   try {
     const request = context.request;
@@ -90,7 +92,7 @@ export async function onRequestPost(context) {
     const telephone = cleanText(data.telephone, 50);
     const preferredContact = cleanText(data.preferredContact, 20);
     const service = cleanText(data.service, 100);
-    const message = cleanText(data.message, 2000);
+    let message = cleanText(data.message, 2000);
     const websiteAddress = cleanText(data.websiteAddress, 200);
 
     const fieldLimits = {
@@ -128,6 +130,12 @@ export async function onRequestPost(context) {
         },
         200
       );
+    }
+
+    if (service === 'device-sourcing' && Object.hasOwn(data, 'deviceRequest')) {
+      const error = validateDeviceRequest(data.deviceRequest);
+      if (error) return jsonResponse({ success: false, message: error }, 400);
+      message = formatDeviceRequest(data.deviceRequest);
     }
 
     if (!name || !email || !service || !message) {

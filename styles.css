@@ -5227,6 +5227,14 @@ main section#business-services > .section-intro {
   gap: 10px;
 }
 
+#top.norlium-hero #support-options :is(.support-card, .hero-shop-link) {
+  border: 1px solid #b9d4f3;
+  border-radius: 12px;
+  background: #f7faff;
+  color: #092654;
+  text-decoration: none;
+}
+
 #top.norlium-hero #support-options .support-card {
   display: flex;
   flex-direction: column;
@@ -5235,20 +5243,15 @@ main section#business-services > .section-intro {
   min-width: 0;
   min-height: 134px;
   padding: 10px 8px;
-  border: 1px solid #b9d4f3;
-  border-radius: 12px;
-  background: #f7faff;
-  color: #092654;
   text-align: center;
-  text-decoration: none;
 }
 
-#top.norlium-hero #support-options .support-card:hover {
+#top.norlium-hero #support-options :is(.support-card, .hero-shop-link):hover {
   border-color: #0869d5;
   background: #e9f3ff;
 }
 
-#top.norlium-hero #support-options .support-card:focus-visible {
+#top.norlium-hero #support-options :is(.support-card, .hero-shop-link):focus-visible {
   outline: 3px solid #0869d5;
   outline-offset: 2px;
 }
@@ -5283,8 +5286,18 @@ main section#business-services > .section-intro {
   text-align: center;
 }
 
-#top.norlium-hero .hero-shop-link svg {
+#top.norlium-hero .hero-shop-icon {
+  display: inline-grid;
+  place-items: center;
   flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #e7f0fc;
+  box-shadow: 0 0 0 5px #e7f0fc;
+}
+
+#top.norlium-hero .hero-shop-icon svg {
   width: 18px;
   height: 18px;
 }

@@ -1,0 +1,201 @@
+.student-laptop-advice {
+  background: #f5f8fc;
+  color: #122945;
+  padding: clamp(28px, 5vw, 64px) 0;
+}
+
+.student-laptop-advice .student-content {
+  display: grid;
+  gap: 20px;
+  width: min(820px, calc(100% - 36px));
+  margin-inline: auto;
+}
+
+.student-laptop-advice section.student-intro,
+.student-laptop-advice section.student-panel {
+  padding: 0;
+}
+
+.student-laptop-advice .student-intro h1 {
+  max-width: 19ch;
+  margin: 0;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+
+.student-laptop-advice .student-intro p {
+  max-width: 60ch;
+  margin: 12px 0 0;
+  color: #455c77;
+}
+
+.student-laptop-advice .student-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 4px;
+}
+
+.student-laptop-advice .student-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #075bb5;
+  border-radius: 9px;
+  line-height: 1.35;
+}
+
+.student-laptop-advice .student-actions .primary {
+  background: #075bb5;
+  color: #fff;
+}
+
+.student-laptop-advice .student-actions .primary:hover {
+  background: #064b94;
+  opacity: 1;
+}
+
+.student-laptop-advice .student-actions .secondary {
+  background: #fff;
+  color: #075bb5;
+}
+
+.student-laptop-advice .student-actions .secondary:hover {
+  background: #e9f3ff;
+}
+
+.student-laptop-advice section.student-panel {
+  padding: 18px clamp(14px, 3vw, 24px);
+  border: 1px solid #d8e5f2;
+  border-inline-start: 4px solid #075bb5;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.student-laptop-advice .student-panel h2 {
+  margin: 0 0 8px;
+  font-size: clamp(19px, 3vw, 22px);
+  line-height: 1.25;
+}
+
+.student-laptop-advice .student-panel p,
+.student-laptop-advice .student-panel ul {
+  margin: 0;
+}
+
+.student-laptop-advice .student-panel ul {
+  padding-inline-start: 20px;
+}
+
+.student-laptop-advice .student-panel li + li {
+  margin-top: 4px;
+}
+
+@media (max-width: 460px) {
+  .student-laptop-advice .student-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.student-advice-form {
+  margin-top: 20px;
+}
+
+.student-advice-form[hidden],
+.student-request-status[hidden] {
+  display: none;
+}
+
+.student-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+
+.student-field {
+  min-width: 0;
+}
+
+.student-field-wide {
+  grid-column: 1 / -1;
+}
+
+.student-field label {
+  display: block;
+  font-size: 14px;
+}
+
+.student-field label span {
+  color: #455c77;
+  font-weight: 500;
+}
+
+.student-field input,
+.student-field textarea {
+  margin-top: 5px;
+  border: 1px solid #8da2bb;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 16px;
+}
+
+.student-field textarea {
+  display: block;
+  min-height: 96px;
+}
+
+.student-field small {
+  display: block;
+  margin-top: 5px;
+}
+
+.student-contact-fields {
+  min-width: 0;
+  margin: 0;
+  padding: 9px 0 0;
+  border: 0;
+  border-top: 1px solid #d8e5f2;
+}
+
+.student-contact-fields legend {
+  padding: 0 10px 0 0;
+  font-weight: 700;
+}
+
+.student-advice-form .consent-option {
+  margin: 0;
+}
+
+.student-advice-form button {
+  border-radius: 9px;
+}
+
+.student-advice-form button:disabled {
+  cursor: wait;
+  opacity: .75;
+}
+
+.student-advice-form .student-request-status {
+  padding: 12px;
+}
+
+.student-request-status[data-state="success"] {
+  border-color: #176a43;
+  background: #eff8f1;
+}
+
+.student-request-status[data-state="error"] {
+  border-color: #a12c2c;
+  background: #fff3f3;
+}
+
+@media (max-width: 560px) {
+  .student-field-grid {
+    grid-template-columns: 1fr;
+  }
+}

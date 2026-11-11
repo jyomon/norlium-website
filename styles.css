@@ -5818,3 +5818,28 @@ main section#top.norlium-hero .hero-content > h1 {
     height: auto;
   }
 }
+
+#why-shop .shop-advice-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#why-shop .student-shop-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #0869d5;
+  border-radius: 10px;
+  color: #0758b3;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+#why-shop .student-shop-link:hover {
+  background: #e9f3ff;
+}
